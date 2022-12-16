@@ -23,8 +23,7 @@ Template Name: bioenergy
              
             </div>
             <div class="programm-intro__background">
-            <?php the_post_thumbnail(
-            );?>
+                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
             </div>
         </div>
            
@@ -45,7 +44,59 @@ Template Name: bioenergy
                 курса
             </h2>
                 <div class="programm-content__specification-text-block">
+                <?php 
+                // параметры по умолчанию
+                    $my_posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category'    => 0,
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'include'     => array(),
+                        'exclude'     => array(),
+                        'meta_key'    => '',
+                        'meta_value'  =>'',
+                        'post_type'   => 'bioenergy-descr',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
+
+                    global $post;
+
+                    foreach( $my_posts as $post ){
+                        setup_postdata( $post );
+                            ?>
+
                     <div class="programm-content__paragraph-sec-col">
+                  
+                    <p class="programm-content__paragraph">
+                  <?php echo get_post_meta(get_the_ID(),'bioenergy-descr1', true); echo get_post_meta(get_the_ID(),'bioenergy-descr1_1', true);?>
+                    </p>
+                  <p class="programm-content__paragraph">
+                  <?php echo get_post_meta(get_the_ID(),'bioenergy-descr2', true); echo get_post_meta(get_the_ID(),'bioenergy-descr2_1', true); ?> 
+                  </p>
+
+                  </div>
+                  <div class="programm-content__paragraph-third-col">
+                      <p class="programm-content__paragraph">
+                      <?php echo get_post_meta(get_the_ID(),'bioenergy-descr3', true);?>
+                      </p>
+                      <p class="programm-content__paragraph">
+                      <?php echo get_post_meta(get_the_ID(),'bioenergy-descr4', true);?>
+                      </p>
+                      <p class="programm-content__paragraph">
+                      <?php echo get_post_meta(get_the_ID(),'bioenergy-descr5', true);?>
+                      </p>
+                  </div>
+          </div>
+                        <?php
+                    }
+
+                    wp_reset_postdata(); // сброс
+                                    
+                ?>
+                
+
+
+                    <!-- <div class="programm-content__paragraph-sec-col">
                   
                         <p class="programm-content__paragraph">
                             Биоэнергетика — это 100% практический курс для развития Ваших способностей. 
@@ -68,7 +119,7 @@ Template Name: bioenergy
                                 В процессе прохождения курса Вы узнаете много интересного о себе, об окружающем миреи о том, как это все устроено в целом!
                             </p>
                         </div>
-                </div>
+                </div> -->
               
         </div>
     </div>

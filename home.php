@@ -54,8 +54,7 @@ get_header();
                         <a href="<?php the_permalink(); ?>" class="intro__courses-more">Подробнее</a>
                        </div>   
                        <div class="intro__courses-background">
-                       <?php the_post_thumbnail(
-            );?>
+                       <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
                         </div>
                     </div>
                         <?php
