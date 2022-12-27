@@ -10,8 +10,6 @@
         wp_head();
     ?>
 
-
-
 </head>
     <body>
       <header class="header" >
@@ -20,7 +18,11 @@
             <div class="header__addition-logo header__addition-logo--light"></div>
             <p class="header__addition-text">Авторские тренинги<br>Михаила Царько</p>
         </div>
+   
+   <!--
+   
 
+   -->
     <ul class="header__list">
         <li class="header__item header__item--home">
             <a class="header__item-link--home" href="home"></a>
@@ -32,10 +34,10 @@
             <a class="header__item-link" href="#">йога классы</a>
         </li>
         <li class="header__item">
-            <a class="header__item-link" href="bioenergy.html">био энергетика</a>
+            <a class="header__item-link" href="bioenergy">био энергетика</a>
         </li>
         <li class="header__item">
-            <a class="header__item-link" href="look_inside.html">мероприятия</a>
+            <a class="header__item-link" href="look_inside">мероприятия</a>
         </li>
         <li class="header__item">
             <a class="header__item-link" href="#">блог</a>
@@ -64,13 +66,20 @@
                     <a href="#">йога классы</a>
                 </li>
                 <li class="header__popup-item">
-                    <a href="bioenergy.html">био энергетика</a>
+                    <a href="bioenergy">био энергетика</a>
                 </li>
                 <li class="header__popup-item">
-                    <a href="look_inside.html">мероприятия</a>
+                    <a href="look_inside">мероприятия</a>
                 </li>
                 <li class="header__popup-item">
                     <a href="#">блог</a>
+                </li>
+                <li class="header__popup-item  header__popup-item--socials">
+                    <div class="site-socials__list">
+                        <a class="site-socials__item site-socials__item--WA" href=""></a>
+                        <a class="site-socials__item site-socials__item--IG" href=""></a>
+                        <button class="site-socials__item site-socials__item--lang" type="button"></button>
+                    </div>
                 </li>
             </ul>
         </div>

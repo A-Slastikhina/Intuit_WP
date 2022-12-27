@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20221214133828">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap&_v=20221214133828" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,800;1,900&display=swap&_v=20221214133828" rel="stylesheet">
-    <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css?_v=20221214133828" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,800;1,900&display=swap" rel="stylesheet">
+    <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
 
   
   
@@ -80,6 +80,13 @@
                 </li>
                 <li class="header__popup-item">
                     <a href="#">блог</a>
+                </li>
+                <li class="header__popup-item  header__popup-item--socials">
+                    <div class="site-socials__list">
+                        <a class="site-socials__item site-socials__item--WA" href=""></a>
+                        <a class="site-socials__item site-socials__item--IG" href=""></a>
+                        <button class="site-socials__item site-socials__item--lang" type="button"></button>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -221,7 +228,7 @@
       <section class="about__bright-experiance">
     <div class="about__bright-wrapper">
         <div class="about__bright-img">
-            <picture><source srcset="img/about/about_img.webp" type="image/webp"><img src="img/about/about_img.png" alt=""></picture>
+            <img src="img/about/about_img.png" alt="">
         </div>
 
         <div class="about__bright-inner">
@@ -326,22 +333,23 @@
 </section>
       <section class="home-timetable">
     <div class="home-timetable__popup home-timetable__popup--hidden">
-        <form class="home-timetable__form" action="url" method="post">
+
+        <div class="home-timetable__form-part">
             <button type="button" class="home-timetable__form--close">&#10006;</button>
-           <label class="home-timetable__form-name" for="">
-            <span class="label-text">Ваше имя</span>
-            <input type="text" name="name" required>
-           </label>
-           <label class="home-timetable__form-email" for="">
-            <span class="label-text">Email</span>
-            <input type="email" name="email" required>
-           </label>
-           <label class="home-timetable__form-mobile" for="">
-            <span class="label-text">Номер телефона</span>
-            <input type="tel" name="mobile" required>
-           </label>
-           <button class="home-timetable__form-submit">Записаться</button>
-        </form>
+
+            <form action="post" class="home-timetable__form" action="url" method="post">
+                <label for="">
+                    <input class="home-timetable__input" type="text" name="name" id="course-enrollment__form-name" placeholder="Имя:">
+                </label>
+                <label for="">
+                    <input class="home-timetable__input home-timetable__input--contacts" type="text" name="contacts" id="course-enrollment__form-contacts" placeholder="whatsapp / telegram">
+                </label>
+                <button type="submit" class="home-timetable__form-submit">
+                    записаться</button>
+            </form>
+           
+        </div>
+      
     </div>
     <div class="wrapper home-timetable__wrapper">
         <h2 class="section-title home-timetable__title">
@@ -358,9 +366,9 @@
         <div class="home-timetable__classes-list">
             <div  class="home-timetable__classes-wrap">
                 <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">
+                <a class="home-timetable__classes-name" href="">
                     Online тренировка биоэнергетики
-                </h3>
+                </a>
                 <p class="home-timetable__classes-time">Вторник, 17:00
                 </p>
                 </div>
@@ -369,7 +377,7 @@
             </div>
             <div class="home-timetable__classes-wrap">
                 <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">пост ковид йога</h3>
+                <a class="home-timetable__classes-name" href="">пост ковид йога</a>
                 <p class="home-timetable__classes-time">среда, 8:30</p>
                 </div>
                 <button class="home-timetable__classes-enroll-btn">
@@ -377,8 +385,8 @@
             </div>
             <div class="home-timetable__classes-wrap">
                 <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">Ecstatic Dance Online
-                </h3>
+                <a class="home-timetable__classes-name" href="">Ecstatic Dance Online
+                </a>
                 <p class="home-timetable__classes-time">
                     последняя суббота месяца
                 </p>
@@ -390,9 +398,9 @@
 
             <div  class="home-timetable__classes-wrap">
                 <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">
+                <a class="home-timetable__classes-name" href="">
                     Online тренировка биоэнергетики
-                </h3>
+                </a>
                 <p class="home-timetable__classes-time">Вторник, 17:00
                 </p>
                 </div>
@@ -401,18 +409,18 @@
             </div>
             <div class="home-timetable__classes-wrap">
                 <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">пост ковид йога</h3>
-                <p class="home-timetable__classes-time">среда, 8:30</p>
+                <a class="home-timetable__classes-name" href="">bioenergy in english</a>
+                <p class="home-timetable__classes-time">сббота, в 12 дубайское время</p>
                 </div>
-                <button class="home-timetable__classes-enroll-btn" data-name="Пост ковид йога">
+                <button class="home-timetable__classes-enroll-btn">
                     записаться</button>
             </div>
             <div class="home-timetable__classes-wrap">
                 <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">Ecstatic Dance Online
-                </h3>
+                <a class="home-timetable__classes-name" href="">индивидуальное занятие
+                </a>
                 <p class="home-timetable__classes-time">
-                    последняя суббота месяца
+                    запишись в любое удобное время
                 </p>
                 </div>
                 <button class="home-timetable__classes-enroll-btn" data-name="Ecstatic Dance">
@@ -433,11 +441,30 @@
         <div class="footer__content">
             <div class="footer__socials mobile-hidden">
                 <p class="footer__socials-text">М.Царько в соцсетях:</p>
-                <a class="footer__socials-link footer__socials-link--ig" href=""></a>
-                <a class="footer__socials-link footer__socials-link--tg" href=""></a>
-                <a class="footer__socials-link footer__socials-link--youtube" href=""></a>
+
+                <div class="footer__socials-inner">
+                    <a class="footer__socials-link footer__socials-link--ig" href=""></a>
+                    <a class="footer__socials-hover footer__socials-hover--ig" href="https://www.instagram.com/"></a>
+                </div>
+                <div class="footer__socials-inner">
+                    <a class="footer__socials-link footer__socials-link--tg" href=""></a>
+                    <a class="footer__socials-hover footer__socials-hover--tg" href=""></a>
+                </div>
+                <div class="footer__socials-inner">
+                    <a class="footer__socials-link footer__socials-link--youtube" href=""></a>
+                    <a class="footer__socials-hover footer__socials-hover--youtube" href=""></a>
+                </div>
+               
+                <div class="footer__socials-inner">
                 <a class="footer__socials-link footer__socials-link--fb" href=""></a>
+                <a class="footer__socials-hover footer__socials-hover--fb" href=""></a>
+
+                </div>
+                <div class="footer__socials-inner">
                 <a class="footer__socials-link footer__socials-link--vk" href=""></a>
+                <a class="footer__socials-hover footer__socials-hover--vk" href=""></a>
+
+                </div>
             </div>
             <div class="footer__link footer__link--organizer">
                 <a  href="#">Организаторам</a>
@@ -450,11 +477,11 @@
        
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js?_v=20221214133828" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" type="text/javascript"></script>
           
     <!-- nanogallery2 -->
-    <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js?_v=20221214133828"></script>
+    <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
 </footer>
-      <script src="js/app.min.js?_v=20221214133828"></script>
+      <script src="js/app.min.js"></script>
     </body>
 </html>

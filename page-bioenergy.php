@@ -5,15 +5,17 @@
 Template Name: bioenergy
 */
 ?>
-   <main>
+
+<main>
        <section class="programm-intro programm-intro--bio">
     <div class="wrapper programm-section__wrapper">
      
         <h1 class="programm-intro__text">
-            био энергетика<br>
-            старт курса 10 сентября
-        </h1>
-
+            био энергетика
+         </h1>
+            <h1 class="programm-intro__text">
+            старт курса 10-го сентября
+         </h1>
         
         <div class="programm-intro__item programm-intro__item--bio">
             <div class="list-wrapper">
@@ -28,13 +30,12 @@ Template Name: bioenergy
         </div>
            
     </div>
- 
 
-</section>
+    </section>
        <section class="programm-content">
     <div class="programm-content__wrapper">
         <div class="programm-content__img">
-            <img src="img/bioenergy/bioenergy_content_img.svg" alt="">
+            <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_content_img.svg" alt="">
         </div>
 
         <div class="programm-content__specification">
@@ -67,11 +68,10 @@ Template Name: bioenergy
 
                     <div class="programm-content__paragraph-sec-col">
                   
-                    <p class="programm-content__paragraph">
-                  <?php echo get_post_meta(get_the_ID(),'bioenergy-descr1', true); echo get_post_meta(get_the_ID(),'bioenergy-descr1_1', true);?>
-                    </p>
+                    <div class="programm-content__paragraph">
+                   <?php the_content();?>
+                    </div>
                   <p class="programm-content__paragraph">
-                  <?php echo get_post_meta(get_the_ID(),'bioenergy-descr2', true); echo get_post_meta(get_the_ID(),'bioenergy-descr2_1', true); ?> 
                   </p>
 
                   </div>
@@ -86,7 +86,7 @@ Template Name: bioenergy
                       <?php echo get_post_meta(get_the_ID(),'bioenergy-descr5', true);?>
                       </p>
                   </div>
-          </div>
+          <!-- </div> -->
                         <?php
                     }
 
@@ -94,37 +94,11 @@ Template Name: bioenergy
                                     
                 ?>
                 
-
-
-                    <!-- <div class="programm-content__paragraph-sec-col">
-                  
-                        <p class="programm-content__paragraph">
-                            Биоэнергетика — это 100% практический курс для развития Ваших способностей. 
-                            Курс подходит начинающим, готовым проявить достаточную интенсивность в занятиях, также может существенно расширить и дополнить навыки опытных практиков из областей: цигун, рейки, космоэнергетика.
-                        </p>
-                        <p class="programm-content__paragraph">
-                            Знания 100% практичны, применимы и легко интегрируемы в Вашу жизнь.   Важный критерий – это проверяемость результатов. Мы четко знаем что делаем, и, при занятии в группе, Вы убедитесь, что цели, поставленные участниками в ходе тренировок, достигаются на вполне осязаемом уровне.
-
-                        </p>
-
-                        </div>
-                        <div class="programm-content__paragraph-third-col">
-                            <p class="programm-content__paragraph">
-                            Например, мы смотрим ауру, и все студенты видят одно и то же. Значит, можно сделать вывод, что мы наблюдаем вполне реальное явление, а не что-то выдуманное из головы. 
-                            </p>
-                            <p class="programm-content__paragraph">
-                                Весь опыт студентов в процессе практики мы пропускаем через такой фильтр, отсекая реальное развитие от представлений и догадок.
-                            </p>
-                            <p class="programm-content__paragraph">
-                                В процессе прохождения курса Вы узнаете много интересного о себе, об окружающем миреи о том, как это все устроено в целом!
-                            </p>
-                        </div>
-                </div> -->
-              
         </div>
     </div>
 </section>
-       <section class="programm-course">
+
+<section class="programm-course">
     <div class="wrapper programm-course__wrapper">
 
         <div class="programm-course__description">
@@ -442,19 +416,20 @@ Template Name: bioenergy
 
         <ul class="programm-reviews__list">
             <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner">
+                <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
-                <img class="programm-reviews__reviewer-photo" src="img/bioenergy/bioenrgy_reviews/diana-photo.svg" alt="">
+                <div class="programm-reviews__item-content">
+                    <img class="programm-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenrgy_reviews/diana-photo.svg" alt="">
            
-                    <p class="programm-reviews__reviewer-name">Диана</p>
-                    <p class="programm-reviews__course-name">Курс “Биоэнергетика”</p>
-                    <div class="programm-reviews__reviewer-contacts">
+                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Диана</p>
+                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
+                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
                         <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
                         <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
                         <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
                     </div>
-                    <p class="programm-reviews__review-text">
+                    <p class="programm-reviews__review-text _js-reviews__review-text">
                         Хочу от всего Сердца поблагодарить Тебя Михаил! За Твою чистоту, доброту и мастерство, 
                         <br>за Твою уникальность, умение тонко чувствовать и видеть. 
                         <br>Занятия по биоэнергетике...по вторникам, это просто невыразимо круто,  полезно 
@@ -462,69 +437,89 @@ Template Name: bioenergy
                         сознательного восприятия на более тонкое, медиумичное, а это значит – каналы 
                         прочистились  и отладились электро магнитные поля,  идеальная подготовка к медитации.
                     </p>
+                </div>
+                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
+
+               
            
                
             </li>
             <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner">
+                <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
-                <img class="programm-reviews__reviewer-photo" src="img/bioenergy/bioenrgy_reviews/diana-photo.svg" alt="">
-                <p class="programm-reviews__reviewer-name">Диана</p>
-                <p class="programm-reviews__course-name">Курс “Биоэнергетика”</p>
-                <div class="programm-reviews__reviewer-contacts">
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
+                <div class="programm-reviews__item-content">
+                    <img class="programm-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenrgy_reviews/diana-photo.svg" alt="">
+                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Диана</p>
+                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
+                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
+                    </div>
+                    
+                    <p class="programm-reviews__review-text _js-reviews__review-text">
+                        Хочу от всего Сердца поблагодарить Тебя Михаил! За Твою чистоту, доброту и мастерство, 
+                            <br>за Твою уникальность, умение тонко чувствовать и видеть. 
+                            <br>Занятия по биоэнергетике...по вторникам, это просто невыразимо круто,  полезно 
+                            и практически сразу приносит свои плоды! После практики отметила изменение 
+                            сознательного восприятия на более тонкое, медиумичное, а это значит – каналы 
+                            прочистились  и отладились электро магнитные поля,  идеальная подготовка к медитации.
+                    </p>
                 </div>
-                
-                <p class="programm-reviews__review-text">
-                    Хочу от всего Сердца поблагодарить Тебя Михаил! За Твою чистоту, доброту и мастерство, 
-                        <br>за Твою уникальность, умение тонко чувствовать и видеть. 
-                        <br>Занятия по биоэнергетике...по вторникам, это просто невыразимо круто,  полезно 
-                        и практически сразу приносит свои плоды! После практики отметила изменение 
-                        сознательного восприятия на более тонкое, медиумичное, а это значит – каналы 
-                        прочистились  и отладились электро магнитные поля,  идеальная подготовка к медитации.
-                </p>
+                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
+
+               
             </li>
     
            
             <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner">
+                <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
-                <img class="programm-reviews__reviewer-photo" src="img/bioenergy/bioenrgy_reviews/ekaterina-photo.svg" alt="">
-                <p class="programm-reviews__reviewer-name">Екатерина
-                </p>
-                <p class="programm-reviews__course-name">Курс “Биоэнергетика”</p>
-                <div class="programm-reviews__reviewer-contacts">
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
+                <div class="programm-reviews__item-content">
+                    <img class="programm-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenrgy_reviews/ekaterina-photo.svg" alt="">
+                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Екатерина
+                    </p>
+                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
+                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
+                    </div>
+                  
+                        <p class="programm-reviews__review-text _js-reviews__review-text">
+                            Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после. 
+                        </p>       
+
                 </div>
-              
-                    <p class="programm-reviews__review-text">
-                        Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после. 
-                    </p>   
-                
+                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
+
+ 
      
             </li>
     
             <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner">
+                <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
-                <img class="programm-reviews__reviewer-photo" src="img/bioenergy/bioenrgy_reviews/ekaterina2-photo.svg" alt="">
-                <p class="programm-reviews__reviewer-name">Екатерина
-                </p>
-                <p class="programm-reviews__course-name">Курс “Биоэнергетика”</p>
-                <div class="programm-reviews__reviewer-contacts">
-                    <a class="programm-reviews__reviewer-socials--IG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials--TG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials--VK" href=""></a>
+                <div class="programm-reviews__item-content">
+                    <img class="programm-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenrgy_reviews/ekaterina2-photo.svg" alt="">
+                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Екатерина
+                    </p>
+                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
+                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
+                        <a class="programm-reviews__reviewer-socials--IG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials--TG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials--VK" href=""></a>
+                    </div>
+                    <p class="programm-reviews__review-text _js-reviews__review-text">
+                        Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после.
+                    </p>
                 </div>
-                <p class="programm-reviews__review-text">
-                    Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после.    </p>
+                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
+
+
             </li>
             
         </ul>
@@ -538,7 +533,7 @@ Template Name: bioenergy
     <div class="wrapper course-enrollment__wrapper">
         <div class="course-enrollment__content">
             <div class="course-enrollment__img-part">
-            <img src="img/enroll/notebook.svg" alt="">
+            <img src="<?php bloginfo('template_url'); ?>/assets/img/enroll/notebook.svg" alt="">
             </div>
             <div class="course-enrollment__text-part">
                 <h2 class="section-title course-enrollment__title">
@@ -565,4 +560,5 @@ Template Name: bioenergy
 </section>
 
     </main>
-<?php get_footer();?>
+
+    <?php get_footer();?>

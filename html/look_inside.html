@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20221214133828">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap&_v=20221214133828" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,800;1,900&display=swap&_v=20221214133828" rel="stylesheet">
-    <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css?_v=20221214133828" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,800;1,900&display=swap" rel="stylesheet">
+    <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
 
   
   
@@ -80,6 +80,13 @@
                 </li>
                 <li class="header__popup-item">
                     <a href="#">блог</a>
+                </li>
+                <li class="header__popup-item  header__popup-item--socials">
+                    <div class="site-socials__list">
+                        <a class="site-socials__item site-socials__item--WA" href=""></a>
+                        <a class="site-socials__item site-socials__item--IG" href=""></a>
+                        <button class="site-socials__item site-socials__item--lang" type="button"></button>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -463,84 +470,102 @@
         </p> 
 
         <ul class="programm-reviews__list">
-            <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner">
+            <li class="programm-reviews__item _js-reviews__item">
+                <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
-                <img class="programm-reviews__reviewer-photo" src="img/reviewer_img.svg" alt="">
+
+                <div class="programm-reviews__item-content">
+                    <img class="programm-reviews__reviewer-photo" src="img/reviewer_img.svg" alt="">
            
-                    <p class="programm-reviews__reviewer-name">Айнура</p>
-                    <p class="programm-reviews__course-name">Курс “MORNING FLOW YOGA”</p>
-                    <div class="programm-reviews__reviewer-contacts">
+                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Айнура</p>
+                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “MORNING FLOW YOGA”</p>
+                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
                         <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
                         <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
                         <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
                     </div>
-                    <p class="programm-reviews__review-text">
+                    <p class="programm-reviews__review-text _js-reviews__review-text">
                         Хочу выразить глубокую благодарность Мише за   то, что научил видеть с закрытыми глазами, 
                         не просто смотреть, но и видеть, не просто слушать, но и слышать. Помог раскрыть новые краски, найти то, что было спрятано внутри и открыть новые грани восприятия себя и мира. 
                         Безумно благодарна Вселенной за то, что ты есть. Желаю всем в новом году, чтобы ваш мир расцветал яркими красками и открыл миллионы возможностей для вашего пути.
                     </p>
            
+                </div>
+                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
+                
                
             </li>
-            <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner">
+            <li class="programm-reviews__item _js-reviews__item">
+                <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
-                <img class="programm-reviews__reviewer-photo" src="img/reviewer_img.svg" alt="">
-                <p class="programm-reviews__reviewer-name">Айнура</p>
-                <p class="programm-reviews__course-name">Курс “MORNING FLOW YOGA”</p>
-                <div class="programm-reviews__reviewer-contacts">
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
+                <div class="programm-reviews__item-content">
+                    <img class="programm-reviews__reviewer-photo" src="img/reviewer_img.svg" alt="">
+                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Айнура</p>
+                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “MORNING FLOW YOGA”</p>
+                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
+                    </div>
+                    
+                    <p class="programm-reviews__review-text _js-reviews__review-text">
+                        Хочу выразить глубокую благодарность Мише за   то, что научил видеть с закрытыми глазами, 
+                        не просто смотреть, но и видеть, не просто слушать, но и слышать. Помог раскрыть новые краски, найти то, что было спрятано внутри и открыть новые грани восприятия себя и мира. 
+                        Безумно благодарна Вселенной за то, что ты есть. Желаю всем в новом году, чтобы ваш мир расцветал яркими красками и открыл миллионы возможностей для вашего пути.
+                    </p>
                 </div>
-                
-                <p class="programm-reviews__review-text">
-                    Хочу выразить глубокую благодарность Мише за   то, что научил видеть с закрытыми глазами, 
-                    не просто смотреть, но и видеть, не просто слушать, но и слышать. Помог раскрыть новые краски, найти то, что было спрятано внутри и открыть новые грани восприятия себя и мира. 
-                    Безумно благодарна Вселенной за то, что ты есть. Желаю всем в новом году, чтобы ваш мир расцветал яркими красками и открыл миллионы возможностей для вашего пути.
-                </p>
+
+                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
+
             </li>
     
            
-            <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner">
+            <li class="programm-reviews__item _js-reviews__item">
+                <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
-                <img class="programm-reviews__reviewer-photo" src="img/bioenergy/bioenrgy_reviews/ekaterina-photo.svg" alt="">
-                <p class="programm-reviews__reviewer-name">Екатерина
-                </p>
-                <p class="programm-reviews__course-name">Курс “Биоэнергетика”</p>
-                <div class="programm-reviews__reviewer-contacts">
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
+                <div class="programm-reviews__item-content">
+                    <img class="programm-reviews__reviewer-photo" src="img/bioenergy/bioenrgy_reviews/ekaterina-photo.svg" alt="">
+                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Екатерина
+                    </p>
+                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
+                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
+                    </div>
+                  
+                        <p class="programm-reviews__review-text _js-reviews__review-text">
+                            Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после. 
+                        </p>   
                 </div>
-              
-                    <p class="programm-reviews__review-text">
-                        Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после. 
-                    </p>   
-                
-     
+                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
+
             </li>
     
-            <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner">
+            <li class="programm-reviews__item _js-reviews__item">
+                <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
-                <img class="programm-reviews__reviewer-photo" src="img/bioenergy/bioenrgy_reviews/ekaterina2-photo.svg" alt="">
-                <p class="programm-reviews__reviewer-name">Екатерина
-                </p>
-                <p class="programm-reviews__course-name">Курс “Биоэнергетика”</p>
-                <div class="programm-reviews__reviewer-contacts">
-                    <a class="programm-reviews__reviewer-socials--IG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials--TG" href=""></a>
-                    <a class="programm-reviews__reviewer-socials--VK" href=""></a>
+                <div class="programm-reviews__item-content">
+                    <img class="programm-reviews__reviewer-photo" src="img/bioenergy/bioenrgy_reviews/ekaterina2-photo.svg" alt="">
+                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Екатерина
+                    </p>
+                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
+                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
+                        <a class="programm-reviews__reviewer-socials--IG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials--TG" href=""></a>
+                        <a class="programm-reviews__reviewer-socials--VK" href=""></a>
+                    </div>
+                    <p class="programm-reviews__review-text _js-reviews__review-text">
+                        Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после.
+                    </p>
                 </div>
-                <p class="programm-reviews__review-text">
-                    Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после.    </p>
+                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
+
+
             </li>
             
         </ul>
@@ -587,11 +612,30 @@
         <div class="footer__content">
             <div class="footer__socials mobile-hidden">
                 <p class="footer__socials-text">М.Царько в соцсетях:</p>
-                <a class="footer__socials-link footer__socials-link--ig" href=""></a>
-                <a class="footer__socials-link footer__socials-link--tg" href=""></a>
-                <a class="footer__socials-link footer__socials-link--youtube" href=""></a>
+
+                <div class="footer__socials-inner">
+                    <a class="footer__socials-link footer__socials-link--ig" href=""></a>
+                    <a class="footer__socials-hover footer__socials-hover--ig" href="https://www.instagram.com/"></a>
+                </div>
+                <div class="footer__socials-inner">
+                    <a class="footer__socials-link footer__socials-link--tg" href=""></a>
+                    <a class="footer__socials-hover footer__socials-hover--tg" href=""></a>
+                </div>
+                <div class="footer__socials-inner">
+                    <a class="footer__socials-link footer__socials-link--youtube" href=""></a>
+                    <a class="footer__socials-hover footer__socials-hover--youtube" href=""></a>
+                </div>
+               
+                <div class="footer__socials-inner">
                 <a class="footer__socials-link footer__socials-link--fb" href=""></a>
+                <a class="footer__socials-hover footer__socials-hover--fb" href=""></a>
+
+                </div>
+                <div class="footer__socials-inner">
                 <a class="footer__socials-link footer__socials-link--vk" href=""></a>
+                <a class="footer__socials-hover footer__socials-hover--vk" href=""></a>
+
+                </div>
             </div>
             <div class="footer__link footer__link--organizer">
                 <a  href="#">Организаторам</a>
@@ -604,11 +648,11 @@
        
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js?_v=20221214133828" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" type="text/javascript"></script>
           
     <!-- nanogallery2 -->
-    <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js?_v=20221214133828"></script>
+    <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
 </footer>
-      <script src="js/app.min.js?_v=20221214133828"></script>
+      <script src="js/app.min.js"></script>
     </body>
 </html>
