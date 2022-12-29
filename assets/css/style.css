@@ -591,10 +591,19 @@ a {
   display: none;
   font-family: "Open Sans", sans-serif;
 }
+.site-socials__item{
+  display: none;
+}
 .header__item--home {
   background-image: url("../img/header/Home.png");
   width: 30px;
   height: 30px;
+  font-size: 0;
+}
+.header__item--home a{
+  width: 30px;
+  height: 30px;
+  display: block;
 }
 .header__item--home--socials {
   display: none;
@@ -611,7 +620,7 @@ a {
 }
 
 .site-socials__item {
-  text-decoration: none;
+  /* text-decoration: none;
   display: inline-block;
   width: 27px;
   height: 27px;
@@ -621,18 +630,33 @@ a {
   margin-right: 5px;
   cursor: pointer;
   border-radius: 50%;
+  font-size: 0; */
+  display: none;
 }
 .site-socials__item--WA {
   background-image: url("../img/header/WA.png");
   background-size: cover;
   width: 27px;
   height: 27px;
+  margin-left: 45px;
+}
+
+.site-socials__item--WA a{
+  display: block;
+  width: 27px;
+  height: 27px;
+
 }
 .site-socials__item--IG {
   background-image: url("../img/header/Insta.png");
   background-size: cover;
   width: 27px;
   height: 27px;
+}
+.site-socials__item--IG a  {
+  width: 27px;
+  height: 27px;
+  display: block;
 }
 .site-socials__item--lang {
   background-image: url("../img/header/Lang.png");
@@ -679,6 +703,24 @@ a {
     cursor: pointer;
     max-width: none;
   }
+  .site-socials__item {
+    text-decoration: none;
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 0;
+    /* display: none; */
+  }
+  .site-socials__item--WA {
+
+    margin-left: 45px;
+  }
   .header__item a {
     text-transform: uppercase;
     font-family: "Open Sans", sans-serif;
@@ -699,6 +741,10 @@ a {
     color: #ffffff;
     text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff;
   }
+  .header__item--home:hover a {
+    border-bottom: none;
+  }
+
   .header__item:hover .site-socials__item {
     border-bottom: none;
   }
@@ -715,7 +761,7 @@ a {
     margin-left: 0;
   }
   .header__item--socials {
-    margin-left: 50px;
+   
   }
   .header__popup-btn {
     display: none;
@@ -1907,6 +1953,20 @@ a {
   font-weight: 100;
   line-height: 30px;
 }
+.header__popup-item--home{
+  background-image: url("../img/header/Home.png");
+  width: 27px;
+  height: 27px;
+  font-size: 0;
+  cursor: pointer;
+  background-size: cover;
+}
+.header__popup-item--home a{
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
 .header__popup-item:hover {
   transform: scale(1.15);
   color: #6b6bc5;
@@ -1914,14 +1974,58 @@ a {
 .header__popup-item:hover a {
   color: #6b6bc5;
 }
+.header__popup-item--home:hover{
+  transform: none;
+}
+.popup__socials__list{
+  display: inline-flex;
+  width: 100px;
+  justify-content: space-between;
+}
+.popup__socials__item{
+font-size: 0;
+}
 
-.header__popup-item--socials .site-socials__item--WA {
+.popup__socials__item--WA {
   background-image: url("../img/header/WA_dark.png");
-}
-.header__popup-item--socials .site-socials__item--IG {
-  background-image: url("../img/header/ig_dark.png");
-}
+  background-size: cover;
+  width: 27px;
+  height: 27px;
+  /* position: relative;
+  right: 40px; */
 
+}
+.popup__socials__item--IG {
+  background-image: url("../img/header/ig_dark.png");
+  background-size: cover;
+  width: 27px;
+  height: 27px;
+  /* position: relative;
+  top: -27px; */
+}
+.popup__socials__item--IG a{
+  width: 27px;
+  height: 27px;
+  display: block;
+}
+.popup__socials__item--WA a{
+  width: 27px;
+  height: 27px;
+  display: block;
+}
+.popup__socials__item--lang{
+  background-image: url("../img/header/Lang.png");
+  background-color: transparent;
+  border: none;
+  width: 27px;
+  height: 27px;
+  background-size: cover;
+  cursor: pointer;
+}
+.popup__socials__item--lang:hover{
+transform: none;
+display: block;
+}
 .header__popup-btn--close {
   position: absolute;
   right: 1%;
@@ -2553,10 +2657,11 @@ a {
   top: -4px;
   height: 460px;
   z-index: 0;
+  width: 100%;
 }
 .programm-intro__background img {
   width: 100%;
-  min-height: 100%;
+  height: 460px;
   z-index: 0;
   object-fit: cover;
 }
@@ -2603,7 +2708,7 @@ a {
     overflow: hidden;
   }
   .programm-intro__item--bio {
-    background-image: url("../img/bioenergy/bio_bckg.png");
+  /* background-image: url("../img/bioenergy/bio_bckg.png"); */
   }
   .programm-section__courses-name {
     font-family: "Open Sans", sans-serif;
@@ -2696,7 +2801,7 @@ a {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   line-height: 20.43px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .programm-content__paragraph::selection {
   background-color: #FFCE79;
@@ -2792,6 +2897,7 @@ a {
   line-height: 22px;
   color: black;
   font-weight: 300;
+  margin-bottom: 20px;
 }
 
 .programm-course__next {
@@ -3264,9 +3370,9 @@ a {
 .programm-photo__photo-gallery {
   margin-left: auto;
   margin-right: auto;
-  flex-wrap: wrap;
+
   margin-top: 20px;
-  max-width: 650px;
+
 }
 
 @media (min-width: 0px) and (max-width: 1020px) {

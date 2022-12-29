@@ -1,37 +1,33 @@
 <?php get_header(); ?>
 
-<?php 
-/* 
-Template Name: bioenergy
-*/
-?>
+
    <main>
-       <section class="programm-intro programm-intro--bio">
-    <div class="wrapper programm-section__wrapper">
-     
-        <h1 class="programm-intro__text">
-            био энергетика
-         </h1>
-            <h1 class="programm-intro__text">
-            старт курса 10-го сентября
-         </h1>
+    <section class="programm-intro programm-intro--bio">
+        <div class="wrapper programm-section__wrapper">
         
-        <div class="programm-intro__item programm-intro__item--bio">
-            <div class="list-wrapper">
-                <h2 class="programm-section__courses-name">био</h2>
-                <h2 class="programm-section__courses-name programm-section__courses-name--big"><?php the_title();?></h2>
-                <p class="programm-section__courses-info programm-section__courses-info--big"><?php echo get_post_meta(get_the_ID(),'bioenergy', true);?></p>
-             
+            <h1 class="programm-intro__text">
+                био энергетика
+            </h1>
+                <h1 class="programm-intro__text">
+                старт курса 10-го сентября
+            </h1>
+            
+            <div class="programm-intro__item programm-intro__item--bio">
+                <div class="list-wrapper">
+                    <h2 class="programm-section__courses-name">био</h2>
+                    <h2 class="programm-section__courses-name programm-section__courses-name--big"><?php the_title();?></h2>
+                    <p class="programm-section__courses-info programm-section__courses-info--big"><?php echo the_content();?></p>
+                
+                </div>
+                <div class="programm-intro__background">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                </div>
             </div>
-            <div class="programm-intro__background">
-                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
-            </div>
+            
         </div>
-           
-    </div>
  
 
-</section>
+    </section>
        <section class="programm-content">
     <div class="programm-content__wrapper">
         <div class="programm-content__img">

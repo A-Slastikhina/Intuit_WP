@@ -17,11 +17,15 @@ Template Name: bioenergy
             старт курса 10-го сентября
          </h1>
         
-        <div class="programm-intro__item programm-intro__item--bio">
+        <div class="programm-intro__item ">
             <div class="list-wrapper">
-                <h2 class="programm-section__courses-name">био</h2>
+                <h2 class="programm-section__courses-name">
+                <?php echo get_post_meta(get_the_ID(),'subtitle', true);?>
+                </h2>
                 <h2 class="programm-section__courses-name programm-section__courses-name--big"><?php the_title();?></h2>
-                <p class="programm-section__courses-info programm-section__courses-info--big"><?php echo get_post_meta(get_the_ID(),'bioenergy', true);?></p>
+                <div class="programm-section__courses-info programm-section__courses-info--big">
+                <?php the_content();?>
+                </div>
              
             </div>
             <div class="programm-intro__background">
@@ -104,15 +108,26 @@ Template Name: bioenergy
         <div class="programm-course__description">
             <div class="programm-course__description-part">
                 <h2 class="section-title programm-section__title programm-section__title--bio">
-                    программа курса
+             <?php 
+               global $post;
+               $bio_info_post = get_post(238);
+               setup_postdata( $bio_info_post);
+               echo get_the_title($bio_info_post->ID);
+               wp_reset_postdata();
+             ?>
+
                 </h2>
         
-                <p class="programm-course__description-text">
-                    Наша программа разделена на 3 основные блока. Вводный, Основной и Сенсорный. Занятия проходят 3 раза в неделю по дням: Вт, Чт и Суббота в 16:00 по Москве. 
-                    <br>
-                    <br>
-                    Длительность занятия: 2 часа. После каждого занятия студент получает домашнее задание, самостоятельное выполнение ДЗ способствует закреплению материала. Студенты также состоят в общем чате, поддерживая и мотивируя друг друга.
-                </p>
+                <div class="programm-course__description-text">
+                <?php
+                  
+                    $bio_info_post = get_post(238);
+                    setup_postdata( $bio_info_post);
+                    the_content();
+                    wp_reset_postdata();
+                ?>
+                </div>
+
             </div>
 
             <div class="programm-course__request">
@@ -122,9 +137,14 @@ Template Name: bioenergy
                 </a>
                -->
               
-                     <button type="button" class="programm-course__next">
-                    Следующий курс начинается
-                    <br>10 сентября 2022 года
+                    <button type="button" class="programm-course__next">
+                     <?php
+                        global $post;
+                        $bio_info_post = get_post(238);
+                        setup_postdata( $bio_info_post);
+                        echo get_post_meta(238,'paragraph', true);
+                        wp_reset_postdata();
+                    ?>
                    </button>
          
               
@@ -139,12 +159,14 @@ Template Name: bioenergy
             
         </div>
       
+        
         <div class="programm-course__intro">
             <h2 class="section-title programm-section__title programm-section__title--intro">
                 вводное занятие
             </h2>
 
             <div class="programm-course__intro-content programm-course__intro-content--initiatory">
+                
                 <div class="programm-course__list programm-course__list--intro">
                     <div class="programm-course__intro-item">
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--1">
@@ -314,7 +336,7 @@ Template Name: bioenergy
                 </div>
                 <button type="button" class="programm-course__purchase-btn">хочу участвовать!</button>
             </div>
-    </div>
+        </div>
     </div>
     <div class="programm-course__border-deco"></div>
 
@@ -398,8 +420,14 @@ Template Name: bioenergy
         </p>
 
         <div class="programm-photo__photo-container">
-            <div class="programm-photo__photo-gallery" id="my_nanogallery5">
-                 
+            <div class="programm-photo__photo-gallery">
+            <?php
+                global $post;
+                $bio_gallery_post = get_post(245);
+                setup_postdata($bio_gallery_post);
+                the_content();
+                wp_reset_postdata();
+            ?> 
             </div>
         </div>
 
@@ -415,36 +443,68 @@ Template Name: bioenergy
         </p> 
 
         <ul class="programm-reviews__list">
+
+        <?php 
+                // параметры по умолчанию
+             $my_posts = get_posts( array(
+                'numberposts' => -1,
+                'category'    => 0,
+                'orderby'     => 'date',
+                'order'       => 'ASC',
+                'include'     => array(),
+                'exclude'     => array(),
+                'meta_key'    => '',
+                'meta_value'  =>'',
+                'post_type'   => 'bioenergy-review',
+                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+             ) );
+
+            global $post;
+
+            foreach( $my_posts as $post ){
+                setup_postdata( $post );
+                    ?>
+
             <li class="programm-reviews__item">
                 <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
                 <div class="programm-reviews__item-content">
-                    <img class="programm-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenrgy_reviews/diana-photo.svg" alt="">
-           
-                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Диана</p>
-                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
-                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
-                    </div>
-                    <p class="programm-reviews__review-text _js-reviews__review-text">
-                        Хочу от всего Сердца поблагодарить Тебя Михаил! За Твою чистоту, доброту и мастерство, 
-                        <br>за Твою уникальность, умение тонко чувствовать и видеть. 
-                        <br>Занятия по биоэнергетике...по вторникам, это просто невыразимо круто,  полезно 
-                        и практически сразу приносит свои плоды! После практики отметила изменение 
-                        сознательного восприятия на более тонкое, медиумичное, а это значит – каналы 
-                        прочистились  и отладились электро магнитные поля,  идеальная подготовка к медитации.
-                    </p>
+
+                    <?php                        
+                    $photo = get_post_meta(get_the_ID(),'bioenergy-rev-img', true);
+                    $fullImg = pods_image_url($photo, 'large');
+                    echo '<img class ="programm-reviews__reviewer-photo"  src="'.$fullImg .'" alt = "Фото">'
+                    ?>   
+                        <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">
+                        <?php the_title();?>
+                        </p>
+                        <p class="programm-reviews__course-name _js-reviews__course-name">
+                        <?php echo get_post_meta(get_the_ID(),'bioenergy-rev-progr', true);?>
+                        </p>
+                        <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
+                            <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href="<?php echo get_post_meta(get_the_ID(),'ig-link', true);?>"></a>
+                            <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href="<?php echo get_post_meta(get_the_ID(),'tg-link', true);?>"></a>
+                            <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href="<?php echo get_post_meta(get_the_ID(),'vk-link', true);?>"></a>
+                        </div>
+                        <div class="programm-reviews__review-text _js-reviews__review-text">
+                        <?php the_content();?>
+                        </div>
                 </div>
                 <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
-
-               
-           
                
             </li>
-            <li class="programm-reviews__item">
+
+      <?php
+            }
+
+            wp_reset_postdata(); // сброс
+                                    
+        ?>
+           
+
+ 
+            <!-- <li class="programm-reviews__item">
                 <div class="programm-reviews__item-inner _js-reviews__item-inner">
              
                 </div>
@@ -521,7 +581,7 @@ Template Name: bioenergy
 
 
             </li>
-            
+             -->
         </ul>
         <div class="programm-reviews__slider-btns">
             <a  class="programm-reviews__more-btn">другие отзывы</a>
@@ -547,7 +607,7 @@ Template Name: bioenergy
                 </p>
             </div>
             <div class="course-enrollment__form-part">
-                <form action="post" class="course-enrollment__form">
+                <form action="post" url="" class="course-enrollment__form">
                     <input class="course-enrollment__input" type="text" name="name" id="course-enrollment__form-name" placeholder="Имя:">
                     <input class="course-enrollment__input course-enrollment__input--contacts" type="text" name="contacts" id="course-enrollment__form-contacts" placeholder="whatsapp / telegram">
                     <button type="submit" class="course-enrollment__submit-btn">

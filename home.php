@@ -97,11 +97,14 @@ get_header();
                             <h2 class="intro__courses-name">
                             <?php echo get_post_meta(get_the_ID(),'subtitle', true);?>
                             </h2>
-                            <h2 class="intro__courses-name intro__courses-name--big intro__courses-name--ff"><?php the_title(
-                        ); ?></h2>
-                            <p class="intro__courses-info">
+                            <h2 class="intro__courses-name intro__courses-name--big intro__courses-name--ff">
+                                <?php the_title(); ?>
+                            </h2>
+                            <div class="intro__courses-info">
+                            
                             <?php the_content();?>
-                            </p>
+                            
+                            </div>
                             <a href="" class="intro__courses-more">Подробнее</a>
                             </div>
                             <div class="intro__courses-background">
@@ -117,72 +120,6 @@ get_header();
                                     
                 ?> 
           
-          
-          
-          
-<!--           
-          <li class="intro__courses-item">
-                    
-                     <div class="list-wrapper">
-                      <h2 class="intro__courses-name">morning</h2>
-                      <h2 class="intro__courses-name intro__courses-name--big intro__courses-name--ff">flow</h2>
-                      <p class="intro__courses-info">
-                          Йога - отличный способ начать день! 
-                          Мы будем учиться у природы, кайфовать, наблюдая дыхание и улыбаясь
-                      </p>
-                      <a href="" class="intro__courses-more">Подробнее</a>
-                     </div>
-                     <div class="intro__courses-background">
-                      <img src="<?php bloginfo('template_url'); ?>/assets/img/intro_bckg.svg" alt="">
-                  </div>
-                      
-                  </li>
-
-
-                  <li class="intro__courses-item intro__courses-item--bio">
-                      <div class="list-wrapper">
-                          <h2 class="intro__courses-name">био</h2>
-                          <h2 class="intro__courses-name intro__courses-name--big">энергетика</h2>
-                          <p class="intro__courses-info intro__courses-info--big">старт курса 10-го сентября</p>
-                          <a href="bioenergy.html" class="intro__courses-more">Подробнее</a>
-                      </div>
-                       <div class="intro__courses-background">
-                      <img src="<?php bloginfo('template_url'); ?>/assets/img/home/intro-desktop/bio-energy.svg" alt="">
-                  </div>
-                  </li>
-                  <li class="intro__courses-item intro__courses-item--look">
-
-                      <div class="list-wrapper">
-                          <h2 class="intro__courses-name intro__courses-name--big">
-                              взгляд<br>в себя
-                          </h2>
-                          <p class="intro__courses-info intro__courses-info--big">старт курса 10-го сентября</p>
-                          <a href="look_inside.html" class="intro__courses-more">Подробнее</a>
-                      </div>
-                     
-                  </li>
-                  <li class="intro__courses-item">
-                      <div class="list-wrapper">
-                          <h2 class="intro__courses-name">йога практика</h2>
-                          <h2 class="intro__courses-name intro__courses-name--big">
-                              yoga<br>workout
-                          </h2>
-                      <p class="intro__courses-info">Dolor sit amet, consectetur adipiscing elit</p>  
-                          <a href="" class="intro__courses-more">Подробнее</a>
-                      </div>
-
-                     
-                  </li>
-                  <li class="intro__courses-item">
-                      <div class="list-wrapper">
-                          <h2 class="intro__courses-name">йога практика</h2>
-                          <h2 class="intro__courses-name intro__courses-name--big">
-                              yoga<br>workout
-                          </h2>
-                           <p class="intro__courses-info">Dolor sit amet, consectetur adipiscing elit</p>
-                          <a href="" class="intro__courses-more">Подробнее</a></div>
-                      
-                  </li>  -->
               </ul>
               <div class="intro__courses-slider-btns"></div>
           </div>
@@ -320,12 +257,13 @@ get_header();
                         подробнее
                     </a>
                 </div>
+                </li>  
             <?php 
 	        }
             } 
             wp_reset_postdata(); // Сбрасываем $post
             ?>
-          </li>  
+       
       </ul>
       <div class="home-courses__slider-btns"></div>
   

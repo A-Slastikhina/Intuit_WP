@@ -19,12 +19,39 @@
             <p class="header__addition-text">Авторские тренинги<br>Михаила Царько</p>
         </div>
    
-   <!--
-   
 
-   -->
-    <ul class="header__list">
-        <li class="header__item header__item--home">
+    <nav class="header__list">
+
+        <?php 
+        wp_nav_menu( [
+            'theme_location'  => '',
+            'menu'            => 'main-menu',
+            'container'       => 'div',
+            'container_class' => '',
+            'container_id'    => '',
+            'menu_class'      => 'header__list',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => '',
+        ] );
+        ?>
+
+        <div class="header__item header__item--socials">
+            <div class="site-socials__list">
+                <!-- <a class="site-socials__item site-socials__item--WA" href=""></a>
+                <a class="site-socials__item site-socials__item--IG" href=""></a> -->
+                <button class="site-socials__item site-socials__item--lang" type="button"></button>
+            </div>
+        </div>
+
+        <!-- <li class="header__item header__item--home">
             <a class="header__item-link--home" href="home"></a>
         </li>
         <li class="header__item">
@@ -48,15 +75,34 @@
                 <a class="site-socials__item site-socials__item--IG" href=""></a>
                 <button class="site-socials__item site-socials__item--lang" type="button"></button>
             </div>
-        </li>
-    </ul>
+        </li> -->
+</nav>
     <button type="button" class="header__popup-btn header__popup-btn--top"></button>
     <div class="header__popup hidden-popup">
         <div class="wrapper">
             <button type="button" class="header__popup-btn--close">&#10006;</button>
-
-            <ul class="header__popup-list">
-                <li class="header__popup-item header__item--home">
+            <?php 
+        wp_nav_menu( [
+            'theme_location'  => '',
+            'menu'            => 'mobile-menu',
+            'container'       => 'div',
+            'container_class' => '',
+            'container_id'    => '',
+            'menu_class'      => 'header__popup-list',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => '',
+        ] );
+        ?>
+            <div class="header__popup-list">
+                <!-- <li class="header__popup-item header__item--home">
                     <a class="header__item-link--home" href="home"></a>
                 </li>
                 <li class="header__popup-item">
@@ -73,15 +119,14 @@
                 </li>
                 <li class="header__popup-item">
                     <a href="#">блог</a>
-                </li>
-                <li class="header__popup-item  header__popup-item--socials">
-                    <div class="site-socials__list">
-                        <a class="site-socials__item site-socials__item--WA" href=""></a>
-                        <a class="site-socials__item site-socials__item--IG" href=""></a>
-                        <button class="site-socials__item site-socials__item--lang" type="button"></button>
-                    </div>
-                </li>
-            </ul>
+                </li> -->
+              
+                        <!-- <a class="popup__socials__item popup__socials__item--WA" href=""></a>
+                        <a class="popup__socials__item popup__socials__item--IG" href=""></a> -->
+            <button style="" class="popup__socials__item popup__socials__item--lang" type="button"></button>
+                    
+                
+        </div>
         </div>
         
     </div>
