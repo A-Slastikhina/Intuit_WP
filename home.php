@@ -365,79 +365,7 @@ wp_reset_postdata();
             wp_reset_postdata(); // сброс
                                     
         ?>
-      <!-- <li class="home-reviews__item">
-          <div class="home-reviews__item-inner _js-reviews__item-inner">
-       
-          </div>
 
-          <div class="home-reviews__item-content">
-              <img class="home-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/home/home_review/reviewer_img.svg" alt="">
-              <p class="home-reviews__reviewer-name _js-reviews__reviewer-name">Екатерина</p>
-              <p class="home-reviews__course-name _js-reviews__course-name">Практика на гвоздях</p>
-              <div class="home-reviews__reviewer-socials _js-reviews__reviewer-socials">
-                  <a class="home-reviews__reviewer-socials--IG" href=""></a>
-                  <a class="home-reviews__reviewer-socials--TG" href=""></a>
-                  <a class="home-reviews__reviewer-socials--VK" href=""></a>
-              </div>
-              
-              <p class="home-reviews__review-text _js-reviews__review-text">
-                Спасибо тебе, что провёл для нас практику: это было потрясающе. И теория, и подготовка, и атмосфера. Было не страшно, смело было довериться тебе. Причём всем участникам, даже кто тебя совсем не знал. И в принципе не знаю, что их ждёт. Рекомендую точно всем, кто давно хотел, но не решался
-
-              </p>
-              
-          </div>
-
-          <div class="home-reviews__arrow-btn _js-reviews__arrow-btn"></div>
-      </li>
-
-     
-      <li class="home-reviews__item">
-          <div class="home-reviews__item-inner _js-reviews__item-inner">
-       
-          </div>
-
-          <div class="home-reviews__item-content">
-              <img class="home-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/home/home_review/reviewer4_img.svg" alt="">
-              <p class="home-reviews__reviewer-name _js-reviews__reviewer-name">Татьяна
-              </p>
-              <p class="home-reviews__course-name _js-reviews__course-name">Практика Взгляд в себя</p>
-              <div class="home-reviews__reviewer-socials _js-reviews__reviewer-socials">
-                  <a class="home-reviews__reviewer-socials--IG" href=""></a>
-                  <a class="home-reviews__reviewer-socials--TG" href=""></a>
-                  <a class="home-reviews__reviewer-socials--VK" href=""></a>
-              </div>
-            
-                  <p class="home-reviews__review-text _js-reviews__review-text">Миша! Благодарю за волшебную практику. Чувствовала и слышалапо-новому. Ощущения разные, приятные и головокружительные. Нужно повторить
-                      Миша! Благодарю за волшебную практику. Чувствовала и слышалапо-новому. Ощущения разные, приятные и головокружительные. Нужно повторить.
-                  </p>   
-          </div>
-
-              <div class="home-reviews__arrow-btn _js-reviews__arrow-btn"></div>
-
-      </li>
-
-      <li class="home-reviews__item">
-          <div class="home-reviews__item-inner _js-reviews__item-inner">
-       
-          </div>
-          <div class="home-reviews__item-content">
-              <img class="home-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/home/home_review/reviewer3_img.svg" alt="">
-              <p class="home-reviews__reviewer-name _js-reviews__reviewer-name">Екатерина
-              </p>
-              <p class="home-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
-              <div class="home-reviews__reviewer-socials _js-reviews__reviewer-socials">
-                  <a class="home-reviews__reviewer-socials--IG" href=""></a>
-                  <a class="home-reviews__reviewer-socials--TG" href=""></a>
-                  <a class="home-reviews__reviewer-socials--VK" href=""></a>
-              </div>
-              <p class="home-reviews__review-text _js-reviews__review-text">
-                Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после.
-              
-              </p>
-          </div>
-      
-          <div class="home-reviews__arrow-btn _js-reviews__arrow-btn"></div>
-      </li> -->
       
   </ul>
   <div class="home-reviews__slider-btns">
@@ -452,16 +380,19 @@ wp_reset_postdata();
       <div class="home-timetable__form-part">
           <button type="button" class="home-timetable__form--close">&#10006;</button>
 
-          <form action="post" class="home-timetable__form" action="url" method="post">
-              <label for="">
+        <form action="post" class="home-timetable__form" action="url" method="post">
+            <?php 
+            echo do_shortcode('[contact-form-7 id="300" title="Форма записи на курсы home-page"]')
+            ?>
+              <!-- <label for="">
                   <input class="home-timetable__input" type="text" name="name" id="course-enrollment__form-name" placeholder="Имя:">
               </label>
               <label for="">
                   <input class="home-timetable__input home-timetable__input--contacts" type="text" name="contacts" id="course-enrollment__form-contacts" placeholder="whatsapp / telegram">
               </label>
               <button type="submit" class="home-timetable__form-submit">
-                  записаться</button>
-          </form>
+                  записаться</button> -->
+        </form>
          
       </div>
     
