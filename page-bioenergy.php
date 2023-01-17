@@ -11,10 +11,11 @@ Template Name: bioenergy
     <div class="wrapper programm-section__wrapper">
      
         <h1 class="programm-intro__text">
-            био энергетика
+        <?php echo get_post_meta(get_the_ID(),'subtitle', true);?>
+        <?php the_title();?>
          </h1>
             <h1 class="programm-intro__text">
-            старт курса 10-го сентября
+            <?php the_content();?>
          </h1>
         
         <div class="programm-intro__item ">
@@ -22,15 +23,16 @@ Template Name: bioenergy
                 <h2 class="programm-section__courses-name">
                 <?php echo get_post_meta(get_the_ID(),'subtitle', true);?>
                 </h2>
-                <h2 class="programm-section__courses-name programm-section__courses-name--big"><?php the_title();?></h2>
+                <h2 class="programm-section__courses-name programm-section__courses-name--big">
+                    <?php the_title();?>
+                </h2>
                 <div class="programm-section__courses-info programm-section__courses-info--big">
                 <?php the_content();?>
+                </div>             
+            </div>
+                <div class="programm-intro__background">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
                 </div>
-             
-            </div>
-            <div class="programm-intro__background">
-                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
-            </div>
         </div>
            
     </div>
@@ -38,65 +40,50 @@ Template Name: bioenergy
     </section>
        <section class="programm-content">
     <div class="programm-content__wrapper">
+            
+           
+
         <div class="programm-content__img">
-            <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_content_img.svg" alt="">
+                    <?php
+                        global $post;
+                        $bio_content = get_post(341);
+                        setup_postdata($bio_content);
+                        echo get_the_post_thumbnail($bio_content->ID); 
+                        wp_reset_postdata();
+                    ?> 
+       
         </div>
 
         <div class="programm-content__specification">
             <h2 class="section-title programm-section__section-title">
-                содержание
-                <br>
-                курса
+                    <?php
+                        global $post;
+                        $bio_content = get_post(341);
+                        setup_postdata($bio_content);
+                        echo get_the_title($bio_content->ID);
+                        wp_reset_postdata();
+                    ?> 
             </h2>
                 <div class="programm-content__specification-text-block">
-                <?php 
-                // параметры по умолчанию
-                    $my_posts = get_posts( array(
-                        'numberposts' => -1,
-                        'category'    => 0,
-                        'orderby'     => 'date',
-                        'order'       => 'ASC',
-                        'include'     => array(),
-                        'exclude'     => array(),
-                        'meta_key'    => '',
-                        'meta_value'  =>'',
-                        'post_type'   => 'bioenergy-descr',
-                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-                    ) );
-
-                    global $post;
-
-                    foreach( $my_posts as $post ){
-                        setup_postdata( $post );
-                            ?>
+                
 
                     <div class="programm-content__paragraph-sec-col">
                   
                     <div class="programm-content__paragraph">
-                   <?php the_content();?>
-                    </div>
-                  <p class="programm-content__paragraph">
-                  </p>
-
-                  </div>
-                  <div class="programm-content__paragraph-third-col">
-                      <p class="programm-content__paragraph">
-                      <?php echo get_post_meta(get_the_ID(),'bioenergy-descr3', true);?>
-                      </p>
-                      <p class="programm-content__paragraph">
-                      <?php echo get_post_meta(get_the_ID(),'bioenergy-descr4', true);?>
-                      </p>
-                      <p class="programm-content__paragraph">
-                      <?php echo get_post_meta(get_the_ID(),'bioenergy-descr5', true);?>
-                      </p>
-                  </div>
-          <!-- </div> -->
                         <?php
-                    }
+                            global $post;
+                            $bio_content = get_post(341);
+                            setup_postdata($bio_content);
+                            the_content();
+                            wp_reset_postdata();
+                        ?> 
+                    </div>
+                 
 
-                    wp_reset_postdata(); // сброс
-                                    
-                ?>
+                  </div>
+                 
+           </div> 
+                       
                 
         </div>
     </div>
@@ -248,7 +235,7 @@ Template Name: bioenergy
 
             <div class="programm-course__intro-content programm-course__intro-content--main">
               
-                <div class="programm-course__list">
+                <div class="programm-course__list programm-course__list--main">
                     <div class="programm-course__list-images">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/chakri-img.svg" alt="">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/zarad_vodi-img.svg" alt="">
@@ -295,103 +282,7 @@ Template Name: bioenergy
                                     
                     ?>
 
-<!-- 
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--2">
-                            Видение ауры
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Отработка навыка видения ауры. 
-                            <br>
-                            <br>
-                            Интерпретация увиденного. Трансформация формы энергии и наблюдение изменений
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--3">
-                            здоровье
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Общие принципы и связи здоровья с энергетикой человека. 
-                            Практика на очищениеи восстановление функций<br>
-                            Методы целительства и техника безопасности
 
-                        </p>
-                    </div>
-
-                 
-                    <div class="programm-course__intro-item">                       
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--4">
-                            Заряд воды 
-                            <br>и носителей
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Общие принципы заряда воды, еды. Возможность наделенияих свойствами влияния, и качествами.
-                        </p>
-                    </div>
-                 
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--5">
-                            создание<br> амулетов
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Разная структура предметов — разные свойства. 
-                            <br>
-                            Усиление свойств природных камней.
-                            Заряд предметов энергией в качестве аккумулятора.
-                            <br>
-                            Заряд свойством и энергией
-                            <br>
-                            Базовая логика и механизм влияния амулета
-
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--6">
-                            энергетические<br>потоки
-                        </p>
-                        <p class="programm-course__intro-item-text">                           
-                            Виды потоков: потоки мест силы, потоки сил природы, универсальные космические потоки, эгрегориальные потоки.
-                            <br>
-                            Открытие и закрытие потоков, работа в потоках. Способы применения потоков
-
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--7">
-                            элементы 
-                            <br>стихий
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Практика 4-х стихий для очищения. Практическое применение энергии стихий. 
-                            <br>
-                            Баланс стихий и техника безопасности
-                        </p>
-                    </div>
-                   
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--8">
-                            экология
-                            <br>пространства
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Принципы циркуляции энергии в пространстве, методы работы с пространством.
-
-
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--9">
-                            разбор
-                            <br>ошибок
-                        </p>
-                        <p class="programm-course__intro-item-text">                           
-                            Разбор 5-и реальных ситуаций.
-                            <br>
-                            Виды ошибок по направлениям: базовая энергетическая практика, работа на местах силы, работа с внешними воздействиями
-                        </p>
-                    </div> -->
                 </div>
 
 
@@ -462,36 +353,6 @@ Template Name: bioenergy
                                     
                     ?>
 
-                    <!-- <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--1">
-                            работа на расстоянии
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Чувствование людей на расстоянии по фото и по настройке.
-                            <br>
-                            Определение состояния человека. Определение уровня энергии
-                            и состояния чакр. Отработка навыка посылания энергии...
-                        </p>
-                    </div> -->
-                    <!-- <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--2">
-                            интуиция и сенсорика
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Общие принципы. Что нам мешает слышать интуицию?
-                            Техники просмотра будущего и ответов: Внутренний экран, Техника расстановки
-                            Сканы по фото, и по настройке — практика и отработка
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--3">
-                            прием 
-                            <br>и отдача энергии
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Генерация и распознавание свойств энергии, методы передачи энергии
-                        </p>
-                    </div> -->
                 </div>
             </div>
             <div class="programm-course__purchase"> 

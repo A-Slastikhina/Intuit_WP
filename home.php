@@ -105,7 +105,7 @@ get_header();
                             <?php the_content();?>
                             
                             </div>
-                            <a href="" class="intro__courses-more">Подробнее</a>
+                            <a href="<?php echo get_post_meta(get_the_ID(),'course-link', true);?>" class="intro__courses-more">Подробнее</a>
                             </div>
                             <div class="intro__courses-background">
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
@@ -346,9 +346,9 @@ wp_reset_postdata();
               <?php echo get_post_meta(get_the_ID(),'home-rev-progr', true);?>
             </p>
               <div class="home-reviews__reviewer-socials _js-reviews__reviewer-socials">
-                  <a class="home-reviews__reviewer-socials--IG" href=""></a>
-                  <a class="home-reviews__reviewer-socials--TG" href=""></a>
-                  <a class="home-reviews__reviewer-socials--VK" href=""></a>
+                  <a class="home-reviews__reviewer-socials--IG" href="<?php echo get_post_meta(get_the_ID(),'ig-link', true);?>"></a>
+                  <a class="home-reviews__reviewer-socials--TG" href="<?php echo get_post_meta(get_the_ID(),'tg-link', true);?>"></a>
+                  <a class="home-reviews__reviewer-socials--VK" href="<?php echo get_post_meta(get_the_ID(),'vk-link', true);?>"></a>
               </div>
               <div class="home-reviews__review-text _js-reviews__review-text">
               <?php the_content();?>
@@ -414,7 +414,7 @@ wp_reset_postdata();
 
       <div class="home-timetable__classes-list">
 
-      <?php 
+            <?php 
                 // параметры по умолчанию
                     $my_posts = get_posts( array(
                         'numberposts' => -1,
@@ -433,7 +433,7 @@ wp_reset_postdata();
 
                     foreach( $my_posts as $post ){
                         setup_postdata( $post );
-                            ?>
+                ?>
 
 
           <div  class="home-timetable__classes-wrap">
@@ -501,7 +501,7 @@ wp_reset_postdata();
                   записаться</button>
           </div> -->
 
-          <?php
+                <?php
                     }
 
                     wp_reset_postdata(); // сброс
