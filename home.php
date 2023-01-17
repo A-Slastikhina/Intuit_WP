@@ -380,7 +380,7 @@ wp_reset_postdata();
       <div class="home-timetable__form-part">
           <button type="button" class="home-timetable__form--close">&#10006;</button>
 
-        <form action="post" class="home-timetable__form" action="url" method="post">
+        <form action="" class="home-timetable__form"  method="post">
             <?php 
             echo do_shortcode('[contact-form-7 id="300" title="Форма записи на курсы home-page"]')
             ?>
@@ -390,6 +390,9 @@ wp_reset_postdata();
               <label for="">
                   <input class="home-timetable__input home-timetable__input--contacts" type="text" name="contacts" id="course-enrollment__form-contacts" placeholder="whatsapp / telegram">
               </label>
+               <label for="">
+                    <input class="home-timetable__input home-timetable__input--email" type="email" name="email" id="" placeholder="email">
+                </label>
               <button type="submit" class="home-timetable__form-submit">
                   записаться</button> -->
         </form>
