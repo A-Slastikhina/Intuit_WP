@@ -168,16 +168,45 @@ Template Name: bioenergy
             <div class="programm-course__intro-content programm-course__intro-content--initiatory">
                 
                 <div class="programm-course__list programm-course__list--intro">
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--1">
-                            чувствительность к энергии, техника безопасности
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Учимся чувствовать энергию, рассматриваем понятие энергополя, нарабатываем чувствительность рук
+                <div class="programm-course__list-images">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/vvodnoe-img.svg" alt="">          
+                </div>
+               <?php $my_posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category'    => 0,
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'include'     => array(),
+                        'exclude'     => array(),
+                        'meta_key'    => '',
+                        'meta_value'  =>'',
+                        'post_type'   => 'bio-prog-vvodnoe',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
 
-                        </p>
-                    </div>
+                        global $post;
+
+                        foreach( $my_posts as $post ){
+                            setup_postdata( $post );
+                            ?>
+
                     <div class="programm-course__intro-item">
+                        <p class="programm-course__intro-item-title"
+                        data-number="<?php echo get_post_meta(get_the_ID(), 'number', true); ?>">
+                        <?php the_title();?>
+                        </p>
+                        <div class="programm-course__intro-item-text">
+                        <?php the_content();?> 
+                        </div>
+                    </div>
+                <?php
+                    }
+
+                    wp_reset_postdata(); // сброс
+                                    
+                ?>
+                
+                    <!-- <div class="programm-course__intro-item">
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--2">
                             связь способностей с вниманием
                         </p>
@@ -193,7 +222,7 @@ Template Name: bioenergy
                         <p class="programm-course__intro-item-text">
                             Генерация и распознавание свойств энергии, методы передачи энергии
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="programm-course__purchase"> 
@@ -218,15 +247,55 @@ Template Name: bioenergy
             </h2>
 
             <div class="programm-course__intro-content programm-course__intro-content--main">
-                <div class="programm-course__list programm-course__list--chakri">
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--1">
-                            Работа с чакрами
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Основы энергетического взаимодействия и балансировки через чакры. Соответствие по цветам. Связи по чакрам. Перестройка на уровень партнера. Сканы, физиогномика.
-                        </p>
+              
+                <div class="programm-course__list">
+                    <div class="programm-course__list-images">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/chakri-img.svg" alt="">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/zarad_vodi-img.svg" alt="">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/elements-img.svg" alt="">
                     </div>
+
+                    <?php 
+                // параметры по умолчанию
+                    $my_posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category'    => 0,
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'include'     => array(),
+                        'exclude'     => array(),
+                        'meta_key'    => '',
+                        'meta_value'  =>'',
+                        'post_type'   => 'bio-prog-main',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
+
+                        global $post;
+
+                        foreach( $my_posts as $post ){
+                            setup_postdata( $post );
+                            ?>
+
+
+                    <div class="programm-course__intro-item">
+                       
+                        <p class="programm-course__intro-item-title" 
+                        data-number="<?php echo get_post_meta(get_the_ID(), 'number', true); ?>">
+                        <?php the_title();?>
+                        </p>
+                        <div class="programm-course__intro-item-text">
+                        <?php the_content();?>                        
+                        </div>
+                    </div>
+
+                    <?php
+                    }
+
+                    wp_reset_postdata(); // сброс
+                                    
+                    ?>
+
+<!-- 
                     <div class="programm-course__intro-item">
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--2">
                             Видение ауры
@@ -249,19 +318,18 @@ Template Name: bioenergy
 
                         </p>
                     </div>
-                </div>
 
-                <div class="programm-course__list programm-course__list--water">
-                    <div class="programm-course__intro-item">
+                 
+                    <div class="programm-course__intro-item">                       
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--4">
                             Заряд воды 
                             <br>и носителей
                         </p>
                         <p class="programm-course__intro-item-text">
                             Общие принципы заряда воды, еды. Возможность наделенияих свойствами влияния, и качествами.
-
                         </p>
                     </div>
+                 
                     <div class="programm-course__intro-item">
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--5">
                             создание<br> амулетов
@@ -289,10 +357,8 @@ Template Name: bioenergy
 
                         </p>
                     </div>
-                </div>
-
-                <div class="programm-course__list programm-course__list--elements">
                     <div class="programm-course__intro-item">
+                        
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--7">
                             элементы 
                             <br>стихий
@@ -300,10 +366,10 @@ Template Name: bioenergy
                         <p class="programm-course__intro-item-text">
                             Практика 4-х стихий для очищения. Практическое применение энергии стихий. 
                             <br>
-                            <br>
                             Баланс стихий и техника безопасности
                         </p>
                     </div>
+                   
                     <div class="programm-course__intro-item">
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--8">
                             экология
@@ -325,8 +391,10 @@ Template Name: bioenergy
                             <br>
                             Виды ошибок по направлениям: базовая энергетическая практика, работа на местах силы, работа с внешними воздействиями
                         </p>
-                    </div>
+                    </div> -->
                 </div>
+
+
             </div>
 
             <div class="programm-course__purchase"> 
@@ -349,9 +417,52 @@ Template Name: bioenergy
                 сенсорика и интуиция
             </h2>
 
-            <div class="programm-course__intro-content programm-course__intro-content--sensoric">
+            <div class="programm-course__intro-content">
                 <div class="programm-course__list programm-course__list--sensoric">
+                <div class="programm-course__list-images">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/vvodnoe-img.svg" alt="">          
+                </div>
+                <?php 
+                // параметры по умолчанию
+                    $my_posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category'    => 0,
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'include'     => array(),
+                        'exclude'     => array(),
+                        'meta_key'    => '',
+                        'meta_value'  =>'',
+                        'post_type'   => 'bio-prog-sensoric',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
+
+                        global $post;
+
+                        foreach( $my_posts as $post ){
+                            setup_postdata( $post );
+                            ?>
+
+
                     <div class="programm-course__intro-item">
+                       
+                        <p class="programm-course__intro-item-title" 
+                        data-number="<?php echo get_post_meta(get_the_ID(), 'number', true); ?>">
+                        <?php the_title();?>
+                        </p>
+                        <div class="programm-course__intro-item-text">
+                        <?php the_content();?>                        
+                        </div>
+                    </div>
+
+                    <?php
+                    }
+
+                    wp_reset_postdata(); // сброс
+                                    
+                    ?>
+
+                    <!-- <div class="programm-course__intro-item">
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--1">
                             работа на расстоянии
                         </p>
@@ -361,8 +472,8 @@ Template Name: bioenergy
                             Определение состояния человека. Определение уровня энергии
                             и состояния чакр. Отработка навыка посылания энергии...
                         </p>
-                    </div>
-                    <div class="programm-course__intro-item">
+                    </div> -->
+                    <!-- <div class="programm-course__intro-item">
                         <p class="programm-course__intro-item-title programm-course__intro-item-title--2">
                             интуиция и сенсорика
                         </p>
@@ -380,7 +491,7 @@ Template Name: bioenergy
                         <p class="programm-course__intro-item-text">
                             Генерация и распознавание свойств энергии, методы передачи энергии
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="programm-course__purchase"> 
@@ -408,6 +519,29 @@ Template Name: bioenergy
     </div>
     <div class="programm-course__border-deco"></div>
     </div>
+
+    <div class="programm-course__popup programm-course__popup--hidden">
+
+<div class="programm-course__form-part">
+    <button type="button" class="programm-course__form--close">&#10006;</button>
+
+    <form autocomplete="off" action="sender.php" class="programm-course__form"  method="post">
+        <label for="">
+            <input autocomplete="off" class="programm-course__input _req" type="text" name="name" id=""   placeholder="Имя:">
+        </label>
+        <label for="">
+            <input autocomplete="off" class="programm-course__input home-timetable__input--contacts _req _tel" type="text"  name="contacts" id=""  placeholder="whatsapp / telegram">
+        </label>
+        <label for="">
+            <input autocomplete="off" class="programm-course__input home-timetable__input--email _req _email" type="email" name="email" id="" placeholder="email">
+        </label>
+        <button type="submit" class="programm-course__form-submit">
+            записаться</button>
+    </form>
+   
+</div>
+
+</div>
 </section>
        
 <section class="programm-photo">
@@ -503,85 +637,6 @@ Template Name: bioenergy
         ?>
            
 
- 
-            <!-- <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner _js-reviews__item-inner">
-             
-                </div>
-                <div class="programm-reviews__item-content">
-                    <img class="programm-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenrgy_reviews/diana-photo.svg" alt="">
-                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Диана</p>
-                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
-                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
-                    </div>
-                    
-                    <p class="programm-reviews__review-text _js-reviews__review-text">
-                        Хочу от всего Сердца поблагодарить Тебя Михаил! За Твою чистоту, доброту и мастерство, 
-                            <br>за Твою уникальность, умение тонко чувствовать и видеть. 
-                            <br>Занятия по биоэнергетике...по вторникам, это просто невыразимо круто,  полезно 
-                            и практически сразу приносит свои плоды! После практики отметила изменение 
-                            сознательного восприятия на более тонкое, медиумичное, а это значит – каналы 
-                            прочистились  и отладились электро магнитные поля,  идеальная подготовка к медитации.
-                    </p>
-                </div>
-                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
-
-               
-            </li>
-    
-           
-            <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner _js-reviews__item-inner">
-             
-                </div>
-                <div class="programm-reviews__item-content">
-                    <img class="programm-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenrgy_reviews/ekaterina-photo.svg" alt="">
-                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Екатерина
-                    </p>
-                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
-                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href=""></a>
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--TG" href=""></a>
-                        <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--VK" href=""></a>
-                    </div>
-                  
-                        <p class="programm-reviews__review-text _js-reviews__review-text">
-                            Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после. 
-                        </p>       
-
-                </div>
-                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
-
- 
-     
-            </li>
-    
-            <li class="programm-reviews__item">
-                <div class="programm-reviews__item-inner _js-reviews__item-inner">
-             
-                </div>
-                <div class="programm-reviews__item-content">
-                    <img class="programm-reviews__reviewer-photo" src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenrgy_reviews/ekaterina2-photo.svg" alt="">
-                    <p class="programm-reviews__reviewer-name _js-reviews__reviewer-name">Екатерина
-                    </p>
-                    <p class="programm-reviews__course-name _js-reviews__course-name">Курс “Биоэнергетика”</p>
-                    <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
-                        <a class="programm-reviews__reviewer-socials--IG" href=""></a>
-                        <a class="programm-reviews__reviewer-socials--TG" href=""></a>
-                        <a class="programm-reviews__reviewer-socials--VK" href=""></a>
-                    </div>
-                    <p class="programm-reviews__review-text _js-reviews__review-text">
-                        Миша, благодарю тебя за практику по биоэнергетике. За помощь мне. У меня до сих пор отличное самочувствие. В позвоночнике легкость. Ясность в голове. Разница в состоянии очевидная до и после.
-                    </p>
-                </div>
-                <div class="programm-reviews__arrow-btn _js-reviews__arrow-btn"></div>
-
-
-            </li>
-             -->
         </ul>
         <div class="programm-reviews__slider-btns">
             <a  class="programm-reviews__more-btn">другие отзывы</a>
@@ -607,11 +662,14 @@ Template Name: bioenergy
                 </p>
             </div>
             <div class="course-enrollment__form-part">
-                <form action="post" url="" class="course-enrollment__form">
-                    <input class="course-enrollment__input" type="text" name="name" id="course-enrollment__form-name" placeholder="Имя:">
-                    <input class="course-enrollment__input course-enrollment__input--contacts" type="text" name="contacts" id="course-enrollment__form-contacts" placeholder="whatsapp / telegram">
+                <form action="" method="post" class="course-enrollment__form">
+                <?php 
+                     echo do_shortcode('[contact-form-7 id="328" title="Запись на курс Биоэнергетика"]')
+                ?>
+                    <!-- <input class="course-enrollment__input" type="text" name="name"  placeholder="Имя:">
+                    <input class="course-enrollment__input course-enrollment__input--contacts" type="text" name="contacts" required placeholder="whatsapp / telegram">
                     <button type="submit" class="course-enrollment__submit-btn">
-                        записаться</button>
+                        записаться</button> -->
                 </form>
             </div>
         </div>

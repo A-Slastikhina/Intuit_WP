@@ -45,46 +45,46 @@ Template Name: about
 
         <ul class="experience__list">
             <li class="experience__item">
-                <img src="img/home/experiance/2021_1.svg" alt="2021">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2021_1.svg" alt="2021">
                 <p class="paragraph">Участник ежегодного фестиваля Тантрис «Интеграция тантрическихи энергетических техник»</p>
             </li>
             <li class="experience__item">
-                <img src="img/home/experiance/2021_2.svg" alt="2021">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2021_2.svg" alt="2021">
                 <p class="paragraph">Ученик Sonu Ji, продолжаю заниматься под руководством наставника</p>
             </li>
             <li class="experience__item">
-                <img src="img/home/experiance/2020.svg" alt="2020">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2020.svg" alt="2020">
                 <p class="paragraph">Сертифицированный инструктор йоги по стандарту Yoga Alliance USA (RTTC Yoga School, курс TTC200, Индия 2020, обучение на англ. яз)            </li>
                 </p>
             <li class="experience__item">
-                <img src="img/home/experiance/2019.svg" alt="2019">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2019.svg" alt="2019">
                 <p class="paragraph">Сертифицированный массажист, массажная школа в г. Владивосток</p>               
             </li>
             <li class="experience__item">
-                <img src="img/home/experiance/2018_1.svg" alt="2018">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2018_1.svg" alt="2018">
                 <p class="paragraph">Регулярный практик в центре Yoga Barn, о. Бали. 2018-2020</p>
             </li>
             <li class="experience__item">
-                <img src="img/home/experiance/2018_2.svg" alt="2018">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2018_2.svg" alt="2018">
                 <p class="paragraph">Курс энергетического массажа от Севы Прем, Крым 2018</p>
             </li>
             <li class="experience__item">
-                <img src="img/home/experiance/2015_1.svg" alt="2015">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2015_1.svg" alt="2015">
                 <p class="paragraph">Практик Випасаны по системе Гоенка и буддийских медитаций</p>
             </li>
             <li class="experience__item">
-                <img src="img/home/experiance/2015_2.svg" alt="2015">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2015_2.svg" alt="2015">
                 <p class="paragraph">Проходил ретриты: 2015 - Индия, 2017 - Таиланд, 2019 - Бали</p>
             </li>
             <li class="experience__item">
-                <img src="img/home/experiance/2012.svg" alt="2012">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/2012.svg" alt="2012">
                 <p class="paragraph">Практик цигун и био-энергетики: с 2012 года, обучение по системе Чжунь Юань Цигун в 2015, Космоэнергетике - 2017</p>
             </li>
         </ul>
         <div class="experience__photo">
             <picture>
-                <source media="(min-width:1020px)" srcset="img/home/experiance/desktop/Michael-photo-desktop.svg">
-                <img src="img/home/experiance/Michail_photo.svg" alt="Фото Михаила Царько">
+                <source media="(min-width:1020px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/desktop/Michael-photo-desktop.svg">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/home/experiance/Michail_photo.svg" alt="Фото Михаила Царько">
     
             </picture>
         </div>
@@ -138,7 +138,7 @@ Template Name: about
       <section class="about__bright-experiance">
     <div class="about__bright-wrapper">
         <div class="about__bright-img">
-            <picture><source srcset="img/about/about_img.webp" type="image/webp"><img src="img/about/about_img.png" alt=""></picture>
+            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/about/about_img.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/about/about_img.png" alt=""></picture>
         </div>
 
         <div class="about__bright-inner">
@@ -221,17 +221,27 @@ Template Name: about
     <div class="about__photo-slider">
 
         <div class="about__photo-slider-item">
-            <div class="about-photo__gallery" id="my_nanogallery3"
-   
-    >
-        
-    </div>
+            <div class="about-photo__gallery">
+            <?php
+                global $post;
+                $about_gallery_post = get_post(329);
+                setup_postdata($about_gallery_post);
+                the_content();
+                wp_reset_postdata();
+            ?> 
+            </div>
         </div>
 
         <div class="about__photo-slider-item">
-            <div class="about-photo__gallery" id="my_nanogallery4" >
-        
-    </div>
+            <div class="about-photo__gallery">
+            <?php
+                global $post;
+                $about_gallery_post = get_post(329);
+                setup_postdata($about_gallery_post);
+                the_content();
+                wp_reset_postdata();
+            ?> 
+            </div>
         </div>
     </div>
 
@@ -241,25 +251,29 @@ Template Name: about
 
   </div>
 </section>
-      <section class="home-timetable">
-    <div class="home-timetable__popup home-timetable__popup--hidden">
-        <form class="home-timetable__form" action="url" method="post">
-            <button type="button" class="home-timetable__form--close">&#10006;</button>
-           <label class="home-timetable__form-name" for="">
-            <span class="label-text">Ваше имя</span>
-            <input type="text" name="name" required>
-           </label>
-           <label class="home-timetable__form-email" for="">
-            <span class="label-text">Email</span>
-            <input type="email" name="email" required>
-           </label>
-           <label class="home-timetable__form-mobile" for="">
-            <span class="label-text">Номер телефона</span>
-            <input type="tel" name="mobile" required>
-           </label>
-           <button class="home-timetable__form-submit">Записаться</button>
-        </form>
-    </div>
+<section class="home-timetable">
+<div class="home-timetable__popup home-timetable__popup--hidden">
+
+<div class="home-timetable__form-part">
+    <button type="button" class="home-timetable__form--close">&#10006;</button>
+
+    <form action="" class="home-timetable__form"  method="post">
+        <label for="">
+            <input class="home-timetable__input" type="text" name="name" id="course-enrollment__form-name" placeholder="Имя:">
+        </label>
+        <label for="">
+            <input class="home-timetable__input home-timetable__input--contacts" type="text" name="contacts" id="course-enrollment__form-contacts" placeholder="whatsapp / telegram">
+        </label>
+        <label for="">
+            <input class="home-timetable__input home-timetable__input--email" type="email" name="email" id="" placeholder="email">
+        </label>
+        <button type="submit" class="home-timetable__form-submit">
+            записаться</button>
+    </form>
+   
+</div>
+
+</div>
     <div class="wrapper home-timetable__wrapper">
         <h2 class="section-title home-timetable__title">
             расписание
@@ -338,7 +352,7 @@ Template Name: about
         </div>
         <div class="home-timetable__more-btn">больше занятий</div>
         <div class="home-timetable__lector-photo">
-            <img  src="img/home/home_timetable/michael_photo.svg" alt="">
+            <img  src="<?php bloginfo('template_url'); ?>/assets/img/home/home_timetable/michael_photo.svg" alt="">
         </div>
         
     </div>
