@@ -2273,6 +2273,7 @@ a {
 
 .about__bright-wrapper {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   padding-top: 60px;
   padding-bottom: 50px;
@@ -2382,10 +2383,10 @@ a {
 .about-photo__title {
   margin-bottom: 10px;
 }
-.about__photo-slider{
-  height: 600px !important;
-  display: inline;
-}
+  /* .about__photo-slider{
+    height: 600px !important;
+    display: inline;
+  } */
 
 .about__photo-slider-btns {
   background-color: #ffcb73;
@@ -2395,11 +2396,13 @@ a {
 }
 
 .about-photo__gallery {
-  max-width: 950px;
+  /* max-width: 950px; */
   margin-left: auto;
   margin-right: auto;
   /* flex-wrap: wrap; */
   margin-top: 20px;
+  position: relative;
+  z-index: 1;
 }
 .bwg-a .last-page{
   display: none !important;
