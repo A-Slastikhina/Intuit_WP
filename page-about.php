@@ -12,18 +12,23 @@ Template Name: about
     <div class="wrapper about__intro-wrapper">
      
         <h1 class="home-page__intro-text">
-            возвращение к себе<br>
-            мой путь
+            <?php echo get_post_meta(get_the_ID(),'subtitle', true);?>
+            <br>
+            <?php the_title();?>
         </h1>
 
         
             <div class="about__intro-item">
                <div class="list-wrapper">
-                <h2 class="intro__courses-name">возвращение к себе</h2>
-                <h2 class="intro__courses-name intro__courses-name--big intro__courses-name">мой путь</h2>
-                <p class="intro__courses-info">
-                    Жизнь это постоянное движение
-                </p>
+                <h2 class="intro__courses-name">
+                    <?php echo get_post_meta(get_the_ID(),'subtitle', true);?>
+                </h2>
+                <h2 class="intro__courses-name intro__courses-name--big intro__courses-name">
+                    <?php the_title();?>
+                </h2>
+                <div class="intro__courses-info">
+                    <?php the_content();?>
+                </div>
                
                </div>
                
@@ -138,36 +143,37 @@ Template Name: about
       <section class="about__bright-experiance">
     <div class="about__bright-wrapper">
         <div class="about__bright-img">
-            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/about/about_img.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/about/about_img.png" alt=""></picture>
+            <?php
+                global $post;
+                $about_bright_exp = get_post(348);
+                setup_postdata($about_bright_exp);
+                echo get_the_post_thumbnail($about_bright_exp->ID); 
+                wp_reset_postdata();
+            ?>         
         </div>
 
         <div class="about__bright-inner">
             <h2 class="section-title bright__title">
-                мой самый 
-                <br>
-                яркий опыт
+                <?php
+                    global $post;
+                    $about_bright_exp = get_post(348);
+                    setup_postdata($about_bright_exp);
+                    echo get_the_title($about_bright_exp->ID);
+                    wp_reset_postdata();
+                ?> 
             </h2>
                 <div class="about__bright-text-part">
-                    <div class="bright__paragraph--sec-col">
-                  
-                        <p class="bright__paragraph">
-                            В 16 лет мне показали что мир куда больше и удивительнее чем принято думать. Я убедился на 100% в материальности мысли, силе внешнего намерения и прочих вещах из области эзотерики.
-                        </p>
-                        <p class="bright__paragraph">
-                            Но самое главное открытие было в том, что мудрость важнее внешней силы и крутости.
-                        </p>
-                        <p class="bright__paragraph">
-                            Состояние внутреннего света, и безусловной любви - это самый яркий ни с чем несравнимый опыт, и ценность которую я считаю безусловной и наиболее важной в своей жизни.
-                        </p>
+                             
+                        <div class="bright__paragraph">
+                            <?php
+                                global $post;
+                                $about_bright_exp = get_post(348);
+                                setup_postdata($about_bright_exp);
+                                the_content();
+                                wp_reset_postdata();
+                            ?> 
                         </div>
-                        <div class="bright__paragraph--third-col">
-                            <p class="bright__paragraph">
-                                Ни какие материальные наслаждения не способны дать и сотую долю этого никтара божественной любви, который мне довелось испытать. Жизнь и Смерть - все это школа, в которой наши души растут, играют и становятся лучше, мудрее.
-                            </p>
-                            <p class="bright__paragraph">
-                                И эта игра определенно мне нравится. Мне нравится материальный план с его строгими законами и возможностью реализовать здесь свои идеи и ценности, возможность стать лучше и научиться новому.
-                            </p>
-                        </div>
+             
                 </div>
               
         </div>
@@ -220,7 +226,7 @@ Template Name: about
     </h2>
     <div class="about__photo-slider">
 
-        <div class="about__photo-slider-item">
+        
             <div class="about-photo__gallery">
             <?php
                 global $post;
@@ -230,19 +236,9 @@ Template Name: about
                 wp_reset_postdata();
             ?> 
             </div>
-        </div>
+       
 
-        <div class="about__photo-slider-item">
-            <div class="about-photo__gallery">
-            <?php
-                global $post;
-                $about_gallery_post = get_post(329);
-                setup_postdata($about_gallery_post);
-                the_content();
-                wp_reset_postdata();
-            ?> 
-            </div>
-        </div>
+       
     </div>
 
     <div class="about__photo-slider-btns">
@@ -287,69 +283,101 @@ Template Name: about
       
 
         <div class="home-timetable__classes-list">
+
+            <?php 
+                // параметры по умолчанию
+                    $my_posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category'    => 0,
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'include'     => array(),
+                        'exclude'     => array(),
+                        'meta_key'    => '',
+                        'meta_value'  =>'',
+                        'post_type'   => 'home-timetable-item',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
+
+                    global $post;
+
+                    foreach( $my_posts as $post ){
+                        setup_postdata( $post );
+                ?>
+
+
             <div  class="home-timetable__classes-wrap">
-                <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">
-                    Online тренировка биоэнергетики
-                </h3>
-                <p class="home-timetable__classes-time">Вторник, 17:00
-                </p>
-                </div>
-                <button type="button" class="home-timetable__classes-enroll-btn" data-name="Биоэнергетика">
-                    записаться</button>
+            <div class="home-timetable__classes">
+            <a class="home-timetable__classes-name" href="">
+            <?php the_title();?>
+            </a>
+            <p class="home-timetable__classes-time">
+            <?php echo get_post_meta(get_the_ID(),'class-time', true);?>
+                        </p>
+            </p>
+            </div>
+            <button type="button" class="home-timetable__classes-enroll-btn" data-name=" <?php the_title();?>">
+                записаться</button>
+            </div>
+            <!-- <div class="home-timetable__classes-wrap">
+            <div class="home-timetable__classes">
+            <a class="home-timetable__classes-name" href="">пост ковид йога</a>
+            <p class="home-timetable__classes-time">среда, 8:30</p>
+            </div>
+            <button class="home-timetable__classes-enroll-btn">
+                записаться</button>
             </div>
             <div class="home-timetable__classes-wrap">
-                <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">пост ковид йога</h3>
-                <p class="home-timetable__classes-time">среда, 8:30</p>
-                </div>
-                <button class="home-timetable__classes-enroll-btn">
-                    записаться</button>
+            <div class="home-timetable__classes">
+            <a class="home-timetable__classes-name" href="">Ecstatic Dance Online
+            </a>
+            <p class="home-timetable__classes-time">
+                последняя суббота месяца
+            </p>
             </div>
-            <div class="home-timetable__classes-wrap">
-                <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">Ecstatic Dance Online
-                </h3>
-                <p class="home-timetable__classes-time">
-                    последняя суббота месяца
-                </p>
-                </div>
-                <button class="home-timetable__classes-enroll-btn" data-name="Ecstatic Dance">
-                    записаться</button>
+            <button class="home-timetable__classes-enroll-btn" data-name="Ecstatic Dance">
+                записаться</button>
             </div>
 
 
             <div  class="home-timetable__classes-wrap">
-                <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">
-                    Online тренировка биоэнергетики
-                </h3>
-                <p class="home-timetable__classes-time">Вторник, 17:00
-                </p>
-                </div>
-                <button type="button" class="home-timetable__classes-enroll-btn" data-name="Биоэнергетика">
-                    записаться</button>
+            <div class="home-timetable__classes">
+            <a class="home-timetable__classes-name" href="">
+                Online тренировка биоэнергетики
+            </a>
+            <p class="home-timetable__classes-time">Вторник, 17:00
+            </p>
+            </div>
+            <button type="button" class="home-timetable__classes-enroll-btn" data-name="Биоэнергетика">
+                записаться</button>
             </div>
             <div class="home-timetable__classes-wrap">
-                <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">пост ковид йога</h3>
-                <p class="home-timetable__classes-time">среда, 8:30</p>
-                </div>
-                <button class="home-timetable__classes-enroll-btn" data-name="Пост ковид йога">
-                    записаться</button>
+            <div class="home-timetable__classes">
+            <a class="home-timetable__classes-name" href="">bioenergy in english</a>
+            <p class="home-timetable__classes-time">суббота, в 12 дубайское время</p>
+            </div>
+            <button class="home-timetable__classes-enroll-btn">
+                записаться</button>
             </div>
             <div class="home-timetable__classes-wrap">
-                <div class="home-timetable__classes">
-                <h3 class="home-timetable__classes-name">Ecstatic Dance Online
-                </h3>
-                <p class="home-timetable__classes-time">
-                    последняя суббота месяца
-                </p>
-                </div>
-                <button class="home-timetable__classes-enroll-btn" data-name="Ecstatic Dance">
-                    записаться</button>
+            <div class="home-timetable__classes">
+            <a class="home-timetable__classes-name" href="">индивидуальное занятие
+            </a>
+            <p class="home-timetable__classes-time">
+                запишись в любое удобное время
+            </p>
             </div>
-        </div>
+            <button class="home-timetable__classes-enroll-btn" data-name="Ecstatic Dance">
+                записаться</button>
+            </div> -->
+
+                <?php
+                    }
+
+                    wp_reset_postdata(); // сброс
+                                    
+                ?>
+            </div>
         <div class="home-timetable__more-btn">больше занятий</div>
         <div class="home-timetable__lector-photo">
             <img  src="<?php bloginfo('template_url'); ?>/assets/img/home/home_timetable/michael_photo.svg" alt="">
