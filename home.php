@@ -508,7 +508,9 @@ wp_reset_postdata();
                                     
                 ?>
       </div>
-      <div class="home-timetable__more-btn">больше занятий</div>
+      <div class="home-timetable__more-btn">
+        <a href="">больше занятий</a>
+      </div>
       <div class="home-timetable__lector-photo">
           <img  src="<?php bloginfo('template_url'); ?>/assets/img/home/home_timetable/michael_photo.svg" alt="">
       </div>

@@ -644,7 +644,7 @@ Template Name: yoga
                 <p class="course-enrollment__text">
                     Дата ближайшего курса
                     <br>
-                    10 сентября 2022
+                    <?php echo get_post_meta(get_the_ID(),'next-course', true);?>
     
                 </p>
             </div>

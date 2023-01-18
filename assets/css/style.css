@@ -334,6 +334,10 @@ a {
     border-radius: 25px;
   }
 }
+.home-timetable__more-btn{
+  position: relative;
+  z-index: 3;
+}
 .home-timetable__more-btn .slick-arrow {
   border: none;
   background-color: transparent;
@@ -341,6 +345,7 @@ a {
   cursor: pointer;
   width: 30px;
   height: 30px;
+
 }
 .home-timetable__more-btn .slick-prev {
   cursor: pointer;
@@ -2047,7 +2052,9 @@ a {
   box-shadow: 0 0 6px 3px #ff77f1;
  
 }
-
+.home-timetable__form{
+  max-width: 250px;
+}
 .home-timetable__form input[type=text] {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
@@ -2077,7 +2084,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 250px;
+  width: 100%;
 }
 .home-timetable__input--contacts {
   margin-top: 24px;
@@ -3525,6 +3532,9 @@ a {
   margin-top: 50px;
   margin-bottom: 40px;
 }
+.course-enrollment__title::selection{
+  background-color: rgb(166, 172, 173);
+}
 
 .course-enrollment__text {
   text-transform: uppercase;
@@ -3533,7 +3543,10 @@ a {
   font-weight: 100;
   color: black;
 }
+.course-enrollment__text::selection{
+  background-color: rgb(166, 172, 173);
 
+}
 .course-enrollment__form-part {
   margin-top: 40px;
 }
@@ -3772,7 +3785,9 @@ a {
 .programm-course__input--email {
   margin-top: 24px;
 }
-
+.programm-course__input--prog_name {
+  display: none;
+}
 .programm-course__form--close {
   cursor: pointer;
   color: #ffcb73;
