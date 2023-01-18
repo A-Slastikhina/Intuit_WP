@@ -101,8 +101,8 @@ get_header();
                                 <?php the_title(); ?>
                             </h2>
                             <div class="intro__courses-info">
-                            
-                            <?php the_content();?>
+                            <a class="intro__courses-info" href="<?php echo get_post_meta(get_the_ID(),'course-link', true);?>"> <?php the_content();?></a>
+                           
                             
                             </div>
                             <a href="<?php echo get_post_meta(get_the_ID(),'course-link', true);?>" class="intro__courses-more">Подробнее</a>

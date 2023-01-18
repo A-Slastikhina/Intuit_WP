@@ -91,19 +91,18 @@ Template Name: bioenergy
 
 <section class="programm-course">
     <div class="wrapper programm-course__wrapper">
-
+        <h2 class="section-title programm-section__title programm-section__title--bio">
+                <?php 
+                global $post;
+                $bio_info_post = get_post(238);
+                setup_postdata( $bio_info_post);
+                echo get_the_title($bio_info_post->ID);
+                wp_reset_postdata();
+                ?>
+        </h2>
         <div class="programm-course__description">
             <div class="programm-course__description-part">
-                <h2 class="section-title programm-section__title programm-section__title--bio">
-             <?php 
-               global $post;
-               $bio_info_post = get_post(238);
-               setup_postdata( $bio_info_post);
-               echo get_the_title($bio_info_post->ID);
-               wp_reset_postdata();
-             ?>
-
-                </h2>
+               
         
                 <div class="programm-course__description-text">
                 <?php

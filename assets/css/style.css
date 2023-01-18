@@ -2674,8 +2674,9 @@ a {
 @media (min-width: 1020px) {
   .programm-intro {
     overflow: hidden;
-    height: 400px;
+    height: 460px;
     background-image: none;
+    position: relative;
   }
   .programm-intro::before {
     content: "";
@@ -2687,7 +2688,7 @@ a {
     height: 30px;
     width: 100%;
     left: 0;
-    top: 372px;
+    bottom: 0;
     overflow: hidden;
     z-index: 1;
   }
@@ -2759,6 +2760,7 @@ a {
 
 .programm-content__wrapper {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   padding-top: 47px;
   padding-bottom: 50px;
@@ -2887,6 +2889,10 @@ a {
   display: flex;
   justify-content: space-between;
   margin-bottom: 55px;
+  max-width: 1014px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
 }
 
 .programm-course__description-part {
@@ -2964,6 +2970,7 @@ a {
   /* justify-content: flex-end; */
   position: relative;
   margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
   margin-top: 40px;
   min-height: 300px;
@@ -3044,6 +3051,7 @@ a {
 .programm-course__purchase {
   max-width: 1014px;
   margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3084,6 +3092,7 @@ a {
 .programm-course__addition {
   max-width: 1014px;
   margin-left: auto;
+  margin-right: auto;
 }
 
 .programm-course__addition-homework {
