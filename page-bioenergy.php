@@ -141,7 +141,7 @@ Template Name: bioenergy
                     <br>
                      предложение с общей скидкой -30%
                 </p>
-                <button type="button" class="programm-course__request-btn">бронирую со скидкой</button>
+                <button type="button" class="programm-course__purchase-btn" data-course_part="Биоэнергетика - Со скидкой">бронирую со скидкой</button>
             </div>
             
         </div>
@@ -217,7 +217,7 @@ Template Name: bioenergy
                     <span class="programm-course__purchase-text programm-course__purchase-text--blue">стоимость: </span>
                     <span class="programm-course__purchase-text">в группе — 3000 ₽. индивидуально — 10000 ₽</span>
                 </div>
-                <button type="button" class="programm-course__purchase-btn">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn" data-course_part="Биоэнергетика - Вводное занятие">хочу участвовать!</button>
             </div>
            
         </div>
@@ -293,7 +293,7 @@ Template Name: bioenergy
                     <span class="programm-course__purchase-text programm-course__purchase-text--blue">стоимость: </span>
                     <span class="programm-course__purchase-text">в группе — 14000 ₽. индивидуально — 58000 ₽</span>
                 </div>
-                <button type="button" class="programm-course__purchase-btn">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn" data-course_part="Биоэнергетика - Основные темы">хочу участвовать!</button>
             </div>
         </div>
     </div>
@@ -361,7 +361,7 @@ Template Name: bioenergy
                     <span class="programm-course__purchase-text">в группе — 3000 ₽. индивидуально — 10000 ₽</span>
         
                 </div>
-                <button type="button" class="programm-course__purchase-btn">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn"data-course_part="Биоэнергетика - Сенсорика">хочу участвовать!</button>
             </div>
             <div class="programm-course__addition"> 
                 <span class="programm-course__addition-homework programm-course__addition-homework--black">
@@ -387,7 +387,15 @@ Template Name: bioenergy
     <button type="button" class="programm-course__form--close">&#10006;</button>
 
     <form autocomplete="off" action="sender.php" class="programm-course__form"  method="post">
-        <label for="">
+        <?php
+        echo do_shortcode('[contact-form-7 id="407" title="Форма Биоэнергетика ХОЧУ УЧАСТВОВАТЬ"]');
+        ?>
+
+        <!--
+         <label for="">
+            <input autocomplete="off" class="programm-course__input--prog_name" type="text" name="course-name" id="">
+        </label>
+         <label for="">
             <input autocomplete="off" class="programm-course__input _req" type="text" name="name" id=""   placeholder="Имя:">
         </label>
         <label for="">
@@ -397,7 +405,7 @@ Template Name: bioenergy
             <input autocomplete="off" class="programm-course__input home-timetable__input--email _req _email" type="email" name="email" id="" placeholder="email">
         </label>
         <button type="submit" class="programm-course__form-submit">
-            записаться</button>
+            записаться</button> -->
     </form>
    
 </div>
@@ -518,7 +526,7 @@ Template Name: bioenergy
                 <p class="course-enrollment__text">
                     Дата ближайшего курса
                     <br>
-                    10 сентября 2022
+                    <?php echo get_post_meta(get_the_ID(),'next-course', true);?>
     
                 </p>
             </div>
