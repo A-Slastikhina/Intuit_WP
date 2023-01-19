@@ -101,9 +101,9 @@ get_header();
                                 <?php the_title(); ?>
                             </h2>
                             <div class="intro__courses-info">
-                            <a class="intro__courses-info" href="<?php echo get_post_meta(get_the_ID(),'course-link', true);?>"> <?php the_content();?></a>
-                           
-                            
+                            <a class="intro__courses-info" href="<?php echo get_post_meta(get_the_ID(),'course-link', true);?>">
+                                <?php the_content();?>
+                            </a>                     
                             </div>
                             <a href="<?php echo get_post_meta(get_the_ID(),'course-link', true);?>" class="intro__courses-more">Подробнее</a>
                             </div>
@@ -384,7 +384,12 @@ wp_reset_postdata();
             <?php 
             echo do_shortcode('[contact-form-7 id="300" title="Форма записи на курсы home-page"]')
             ?>
-              <!-- <label for="">
+
+              <!-- 
+               <label for="">
+                    <input class="home-timetable__input--prog_name" type="text" name="course-name" id="">
+                </label> 
+              <label for="">
                   <input class="home-timetable__input" type="text" name="name" id="course-enrollment__form-name" placeholder="Имя:">
               </label>
               <label for="">
@@ -438,15 +443,15 @@ wp_reset_postdata();
 
           <div  class="home-timetable__classes-wrap">
               <div class="home-timetable__classes">
-              <a class="home-timetable__classes-name" href="">
+              <a class="home-timetable__classes-name" href="<?php echo get_post_meta(get_the_ID(),'class-link', true);?>">
               <?php the_title();?>
               </a>
               <p class="home-timetable__classes-time">
-              <?php echo get_post_meta(get_the_ID(),'class-time', true);?>
-                        </p>
+                <?php echo get_post_meta(get_the_ID(),'class-time', true);?>
+              </p>
               </p>
               </div>
-              <button type="button" class="home-timetable__classes-enroll-btn" data-name=" <?php the_title();?>">
+              <button type="button" class="home-timetable__classes-enroll-btn" data-name="<?php the_title();?>">
                   записаться</button>
           </div>
           <!-- <div class="home-timetable__classes-wrap">

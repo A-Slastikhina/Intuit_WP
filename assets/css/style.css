@@ -336,7 +336,7 @@ a {
 }
 .home-timetable__more-btn{
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 .home-timetable__more-btn .slick-arrow {
   border: none;
@@ -2099,7 +2099,12 @@ a {
 .home-timetable__input--email {
   margin-top: 24px;
 }
-
+.home-timetable__input--prog_name{
+  display: none;
+ }
+._error{
+  box-shadow: 0 0 25px red;
+}
 .home-timetable__form--close {
   cursor: pointer;
   color: #ffcb73;
@@ -2546,8 +2551,9 @@ a {
 
 @media (min-width: 1020px) {
   .about__intro {
-    height: 400px;
+    height: 460px;
     background-image: none;
+    position: relative;
   }
   .about__intro::before {
     content: "";
@@ -2559,7 +2565,7 @@ a {
     height: 30px;
     width: 100%;
     left: 0;
-    top: 372px;
+    bottom: 0;
     overflow: hidden;
     z-index: 1;
   }
@@ -2707,7 +2713,7 @@ a {
     padding-bottom: 10px;
     width: 100%;
     background-size: cover;
-    height: 400px;
+    height: 460px;
     box-sizing: border-box;
     background-color: #6B6BC5;
     background-position: center;
@@ -2733,8 +2739,7 @@ a {
   }
   .programm-section__courses-name--ff {
     font-family: "Montserrat Alternates", sans-serif;
-    position: relative;
-    left: -6px;
+ 
   }
   .programm-section__courses-info {
     font-family: "Open Sans", sans-serif;
@@ -3727,7 +3732,9 @@ a {
   box-shadow: 0 0 6px 3px #FF77F1;
  
 }
-
+.programm-course__form{
+  max-width: 250px;
+}
 .programm-course__form input[type=text] {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
@@ -3779,6 +3786,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 .programm-course__input--contacts {
   margin-top: 24px;
@@ -3829,9 +3837,7 @@ a {
   padding-bottom: 3px;
 }
 
-.programm-course__input._error {
-  box-shadow: 0 0 25px red;
-}
+
 
 @media (min-width: 0px) and (max-width: 668px) {
   .programm-course__form-part {

@@ -31,7 +31,9 @@ Template Name: about
                 </div>
                
                </div>
-               
+               <div class="programm-intro__background">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                </div>               
                 
             </div>
            
@@ -254,17 +256,24 @@ Template Name: about
     <button type="button" class="home-timetable__form--close">&#10006;</button>
 
     <form action="" class="home-timetable__form"  method="post">
-        <label for="">
-            <input class="home-timetable__input" type="text" name="name" id="course-enrollment__form-name" placeholder="Имя:">
+        <?php 
+            echo do_shortcode('[contact-form-7 id="300" title="Форма записи на курсы home-page"]')
+        ?>
+
+         <!-- <label for="">
+            <input class="home-timetable__input--prog_name" type="text" name="course-name" id="">
         </label>
         <label for="">
-            <input class="home-timetable__input home-timetable__input--contacts" type="text" name="contacts" id="course-enrollment__form-contacts" placeholder="whatsapp / telegram">
+            <input class="home-timetable__input _req" type="text" name="name" id="course-enrollment__form-name" placeholder="Имя:">
+        </label>
+        <label for="">
+            <input class="home-timetable__input home-timetable__input--contacts _req" type="text" name="contacts" id="course-enrollment__form-contacts" placeholder="whatsapp / telegram">
         </label>
         <label for="">
             <input class="home-timetable__input home-timetable__input--email" type="email" name="email" id="" placeholder="email">
         </label>
         <button type="submit" class="home-timetable__form-submit">
-            записаться</button>
+            записаться</button> -->
     </form>
    
 </div>
@@ -319,57 +328,6 @@ Template Name: about
             <button type="button" class="home-timetable__classes-enroll-btn" data-name=" <?php the_title();?>">
                 записаться</button>
             </div>
-            <!-- <div class="home-timetable__classes-wrap">
-            <div class="home-timetable__classes">
-            <a class="home-timetable__classes-name" href="">пост ковид йога</a>
-            <p class="home-timetable__classes-time">среда, 8:30</p>
-            </div>
-            <button class="home-timetable__classes-enroll-btn">
-                записаться</button>
-            </div>
-            <div class="home-timetable__classes-wrap">
-            <div class="home-timetable__classes">
-            <a class="home-timetable__classes-name" href="">Ecstatic Dance Online
-            </a>
-            <p class="home-timetable__classes-time">
-                последняя суббота месяца
-            </p>
-            </div>
-            <button class="home-timetable__classes-enroll-btn" data-name="Ecstatic Dance">
-                записаться</button>
-            </div>
-
-
-            <div  class="home-timetable__classes-wrap">
-            <div class="home-timetable__classes">
-            <a class="home-timetable__classes-name" href="">
-                Online тренировка биоэнергетики
-            </a>
-            <p class="home-timetable__classes-time">Вторник, 17:00
-            </p>
-            </div>
-            <button type="button" class="home-timetable__classes-enroll-btn" data-name="Биоэнергетика">
-                записаться</button>
-            </div>
-            <div class="home-timetable__classes-wrap">
-            <div class="home-timetable__classes">
-            <a class="home-timetable__classes-name" href="">bioenergy in english</a>
-            <p class="home-timetable__classes-time">суббота, в 12 дубайское время</p>
-            </div>
-            <button class="home-timetable__classes-enroll-btn">
-                записаться</button>
-            </div>
-            <div class="home-timetable__classes-wrap">
-            <div class="home-timetable__classes">
-            <a class="home-timetable__classes-name" href="">индивидуальное занятие
-            </a>
-            <p class="home-timetable__classes-time">
-                запишись в любое удобное время
-            </p>
-            </div>
-            <button class="home-timetable__classes-enroll-btn" data-name="Ecstatic Dance">
-                записаться</button>
-            </div> -->
 
                 <?php
                     }
@@ -378,7 +336,10 @@ Template Name: about
                                     
                 ?>
             </div>
-        <div class="home-timetable__more-btn">больше занятий</div>
+        <div class="home-timetable__more-btn">
+            <a href="">больше занятий
+            </a> 
+        </div>
         <div class="home-timetable__lector-photo">
             <img  src="<?php bloginfo('template_url'); ?>/assets/img/home/home_timetable/michael_photo.svg" alt="">
         </div>

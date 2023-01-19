@@ -2,12 +2,12 @@
 
 <?php 
 /* 
-Template Name: morning-flow
+Template Name: yoga-workout
 */
 ?>
 
 <main>
-    <section class="programm-intro">
+       <section class="programm-intro programm-intro--bio">
     <div class="wrapper programm-section__wrapper">
      
         <h1 class="programm-intro__text">
@@ -23,10 +23,10 @@ Template Name: morning-flow
                 <h2 class="programm-section__courses-name">
                 <?php echo get_post_meta(get_the_ID(),'subtitle', true);?>
                 </h2>
-                <h2 class="programm-section__courses-name programm-section__courses-name--big programm-section__courses-name--ff">
+                <h2 class="programm-section__courses-name programm-section__courses-name--big">
                     <?php the_title();?>
                 </h2>
-                <div class="programm-section__courses-info">
+                <div class="programm-section__courses-info programm-section__courses-info--big">
                 <?php the_content();?>
                 </div>             
             </div>
@@ -38,91 +38,95 @@ Template Name: morning-flow
     </div>
 
     </section>
-       <section class="programm-content">
-    <div class="programm-content__wrapper">       
+    <section class="programm-content">
+        <div class="programm-content__wrapper">    
 
-        <div class="programm-content__img">
-                    <?php
-                        global $post;
-                        $flow_content = get_post(368);
-                        setup_postdata($flow_content);
-                        echo get_the_post_thumbnail($flow_content->ID); 
-                        wp_reset_postdata();
-                    ?> 
-       
-        </div>
-
-        <div class="programm-content__specification">
-            <h2 class="section-title programm-section__section-title">
-                    <?php
-                        global $post;
-                        $flow_content = get_post(368);
-                        setup_postdata($flow_content);
-                        echo get_the_title($flow_content->ID);
-                        wp_reset_postdata();
-                    ?> 
-            </h2>
-                <div class="programm-content__specification-text-block">
-                
-
-                    <div class="programm-content__paragraph-sec-col">
-                  
-                    <div class="programm-content__paragraph">
+            <div class="programm-content__img">
                         <?php
                             global $post;
-                            $flow_content = get_post(368);
-                            setup_postdata($flow_content);
-                            the_content();
+                            $yoga_workout_content = get_post(413);
+                            setup_postdata($yoga_workout_content);
+                            echo get_the_post_thumbnail($yoga_workout_content->ID); 
                             wp_reset_postdata();
                         ?> 
-                    </div>
-                 
+        
+            </div>
 
-                  </div>
-                 
-           </div> 
-                       
-                
+                <div class="programm-content__specification">
+                    <h2 class="section-title programm-section__section-title">
+                            <?php
+                                global $post;
+                                $yoga_workout_content = get_post(413);
+                                setup_postdata($yoga_workout_content);
+                                echo get_the_title($yoga_workout_content->ID);
+                                wp_reset_postdata();
+                            ?> 
+                    </h2>
+                    <div class="programm-content__specification-text-block">
+                        
+
+                        <div class="programm-content__paragraph-sec-col">
+                        
+                            <div class="programm-content__paragraph">
+                                <?php
+                                    global $post;
+                                    $yoga_workout_content = get_post(413);
+                                    setup_postdata($yoga_workout_content);
+                                    the_content();
+                                    wp_reset_postdata();
+                                ?> 
+                            </div>
+                        
+
+                        </div>
+                        
+                    </div> 
+                            
+                    
+            <!-- </div> -->
         </div>
-    </div>
 </section>
 
 <section class="programm-course">
     <div class="wrapper programm-course__wrapper">
-        <h2 class="section-title programm-section__title">
-            <?php 
-             global $post;
-             $flow_info_post = get_post(375);
-             setup_postdata( $flow_info_post);
-             echo get_the_title($flow_info_post->ID);
-             wp_reset_postdata();
-             ?>
+        <h2 class="section-title programm-section__title programm-section__title--bio">
+                <?php 
+                global $post;
+                $workout_info_post = get_post(417);
+                setup_postdata( $workout_info_post);
+                echo get_the_title($workout_info_post->ID);
+                wp_reset_postdata();
+                ?>
 
-         </h2>
+        </h2>
         <div class="programm-course__description">
             <div class="programm-course__description-part">
+            
         
                 <div class="programm-course__description-text">
-                    <?php
-                    
-                    $flow_info_post = get_post(375);
-                    setup_postdata( $flow_info_post);
-                        the_content();
-                        wp_reset_postdata();
-                    ?>
+                <?php                 
+                   $workout_info_post = get_post(417);
+                   setup_postdata( $workout_info_post);
+                    the_content();
+                    wp_reset_postdata();
+                ?>
                 </div>
 
             </div>
 
             <div class="programm-course__request">
-
+               <!--
+                 <a href="">
+                    <div class="programm-course__next"></div>
+                </a>
+               -->
               
                     <button type="button" class="programm-course__next">
                      <?php
                         global $post;
-                        $flow_info_post = get_post(375);
-                        setup_postdata( $flow_info_post);
-                        echo get_post_meta(375,'paragraph', true);
+                        $workout_info_post = get_post(417);
+                        setup_postdata( $workout_info_post);
+                        echo get_post_meta(417,'paragraph', true);
                         wp_reset_postdata();
                     ?>
                    </button>
@@ -134,7 +138,7 @@ Template Name: morning-flow
                     <br>
                      предложение с общей скидкой -30%
                 </p>
-                <button type="button" class="programm-course__purchase-btn"data-course_part="Morning-flow - Со скидкой">бронирую со скидкой</button>
+                <button type="button" class="programm-course__purchase-btn" data-course_part="Yoga-workout со скидкой">бронирую со скидкой</button>
             </div>
             
         </div>
@@ -160,7 +164,7 @@ Template Name: morning-flow
                         'exclude'     => array(),
                         'meta_key'    => '',
                         'meta_value'  =>'',
-                        'post_type'   => 'yoga_flow-prog-init',
+                        'post_type'   => 'workout-prog-init',
                         'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                     ) );
 
@@ -179,14 +183,12 @@ Template Name: morning-flow
                         <?php the_content();?> 
                         </div>
                     </div>
-                <?php
-                    }
+                        <?php
+                            }
 
-                    wp_reset_postdata(); // сброс
-                                    
-                ?>
-                
-                  
+                            wp_reset_postdata(); // сброс
+                                            
+                        ?>
                 </div>
             </div>
             <div class="programm-course__purchase"> 
@@ -194,7 +196,7 @@ Template Name: morning-flow
                     <span class="programm-course__purchase-text programm-course__purchase-text--blue">стоимость: </span>
                     <span class="programm-course__purchase-text">в группе — 3000 ₽. индивидуально — 10000 ₽</span>
                 </div>
-                <button type="button" class="programm-course__purchase-btn"data-course_part="Morning-flow Вводное занятие">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn" data-course_part="Yoga-workout вводное занятие">хочу участвовать!</button>
             </div>
            
         </div>
@@ -230,7 +232,7 @@ Template Name: morning-flow
                         'exclude'     => array(),
                         'meta_key'    => '',
                         'meta_value'  =>'',
-                        'post_type'   => 'yoga_flow-prog-main',
+                        'post_type'   => 'workout-prog-main',
                         'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                     ) );
 
@@ -259,6 +261,7 @@ Template Name: morning-flow
                                     
                     ?>
 
+
                 </div>
 
 
@@ -269,14 +272,14 @@ Template Name: morning-flow
                     <span class="programm-course__purchase-text programm-course__purchase-text--blue">стоимость: </span>
                     <span class="programm-course__purchase-text">в группе — 14000 ₽. индивидуально — 58000 ₽</span>
                 </div>
-                <button type="button" class="programm-course__purchase-btn"data-course_part="Morning-flow Основная программа">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn"data-course_part="Yoga-workout основные темы">хочу участвовать!</button>
             </div>
         </div>
     </div>
     <div class="programm-course__border-deco"></div>
 
     <!--
-        продвинутый 
+        продвинутый
     -->
     <div class="wrapper programm-course__container programm-course__container--sensoric">
         <div class="programm-course__intro">
@@ -300,7 +303,7 @@ Template Name: morning-flow
                         'exclude'     => array(),
                         'meta_key'    => '',
                         'meta_value'  =>'',
-                        'post_type'   => 'yoga_flow-prog-adv',
+                        'post_type'   => 'workout-prog-adv',
                         'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                     ) );
 
@@ -338,7 +341,7 @@ Template Name: morning-flow
                     <span class="programm-course__purchase-text">в группе — 3000 ₽. индивидуально — 10000 ₽</span>
         
                 </div>
-                <button type="button" class="programm-course__purchase-btn" data-course_part="Morning-flow продвинутый уровень">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn"data-course_part="Yoga-workout продвинутый уровень">хочу участвовать!</button>
             </div>
             <div class="programm-course__addition"> 
                 <span class="programm-course__addition-homework programm-course__addition-homework--black">
@@ -364,14 +367,10 @@ Template Name: morning-flow
     <button type="button" class="programm-course__form--close">&#10006;</button>
 
     <form autocomplete="off" action="sender.php" class="programm-course__form"  method="post">
-        <?php
-            echo do_shortcode('[contact-form-7 id="409" title="Форма Morning-Flow ХОЧУ УЧАСТВОВАТЬ"]');
-        ?>  
-        <!--  
-         <label for="">
-            <input autocomplete="off" class="programm-course__input--prog_name" type="text" name="course-name" id="">
-        </label>
-        <label for="">
+        <?php 
+            echo do_shortcode('[contact-form-7 id="450" title="Форма YOGA-WORKOUT ХОЧУ УЧАСТВОВАТЬ"]');
+        ?>
+        <!-- <label for="">
             <input autocomplete="off" class="programm-course__input _req" type="text" name="name" id=""   placeholder="Имя:">
         </label>
         <label for="">
@@ -402,8 +401,8 @@ Template Name: morning-flow
             <div class="programm-photo__photo-gallery">
             <?php
                 global $post;
-                $flow_gallery_post = get_post(456);
-                setup_postdata($flow_gallery_post);
+                $workout_gallery_post = get_post(451);
+                setup_postdata($workout_gallery_post);
                 the_content();
                 wp_reset_postdata();
             ?> 
@@ -434,7 +433,7 @@ Template Name: morning-flow
                 'exclude'     => array(),
                 'meta_key'    => '',
                 'meta_value'  =>'',
-                'post_type'   => 'yoga_flow-reviews',
+                'post_type'   => 'workout-reviews',
                 'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
              ) );
 
@@ -484,7 +483,7 @@ Template Name: morning-flow
 
         </ul>
         <div class="programm-reviews__slider-btns">
-            <a href=""  class="programm-reviews__more-btn">другие отзывы</a>
+            <a href="" class="programm-reviews__more-btn">другие отзывы</a>
         </div>
 
     </div>
@@ -509,7 +508,7 @@ Template Name: morning-flow
             <div class="course-enrollment__form-part">
                 <form action="" method="post" class="course-enrollment__form">
                 <?php 
-                     echo do_shortcode('[contact-form-7 id="328" title="Запись на курс Morning Flow"]')
+                     echo do_shortcode('[contact-form-7 id="492" title="Запись на курс Yoga Workout"]')
                 ?>
                     <!-- <input class="course-enrollment__input" type="text" name="name"  placeholder="Имя:">
                     <input class="course-enrollment__input course-enrollment__input--contacts" type="text" name="contacts" required placeholder="whatsapp / telegram">

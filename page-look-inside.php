@@ -2,7 +2,7 @@
 
 <?php 
 /* 
-Template Name: yoga
+Template Name: look-inside
 */
 ?>
 
@@ -38,78 +38,75 @@ Template Name: yoga
     </div>
 
     </section>
-       <section class="programm-content">
-    <div class="programm-content__wrapper">
-            
-           
+    <section class="programm-content">
+        <div class="programm-content__wrapper">    
 
-        <div class="programm-content__img">
-                    <?php
-                        global $post;
-                        $flow_content = get_post(368);
-                        setup_postdata($flow_content);
-                        echo get_the_post_thumbnail($flow_content->ID); 
-                        wp_reset_postdata();
-                    ?> 
-       
-        </div>
-
-        <div class="programm-content__specification">
-            <h2 class="section-title programm-section__section-title">
-                    <?php
-                        global $post;
-                        $flow_content = get_post(368);
-                        setup_postdata($flow_content);
-                        echo get_the_title($flow_content->ID);
-                        wp_reset_postdata();
-                    ?> 
-            </h2>
-                <div class="programm-content__specification-text-block">
-                
-
-                    <div class="programm-content__paragraph-sec-col">
-                  
-                    <div class="programm-content__paragraph">
+            <div class="programm-content__img">
                         <?php
                             global $post;
-                            $flow_content = get_post(368);
-                            setup_postdata($flow_content);
-                            the_content();
+                            $look_inside_content = get_post(499);
+                            setup_postdata($look_inside_content);
+                            echo get_the_post_thumbnail($look_inside_content->ID); 
                             wp_reset_postdata();
                         ?> 
-                    </div>
-                 
+        
+            </div>
 
-                  </div>
-                 
-           </div> 
-                       
-                
+                <div class="programm-content__specification">
+                    <h2 class="section-title programm-section__section-title">
+                            <?php
+                                global $post;
+                                $look_inside_content = get_post(499);
+                                setup_postdata($look_inside_content);
+                                echo get_the_title($look_inside_content->ID);
+                                wp_reset_postdata();
+                            ?> 
+                    </h2>
+                    <div class="programm-content__specification-text-block">
+                        
+
+                        <div class="programm-content__paragraph-sec-col">
+                        
+                            <div class="programm-content__paragraph">
+                                <?php
+                                    global $post;
+                                    $look_inside_content = get_post(499);
+                                    setup_postdata($look_inside_content);
+                                    the_content();
+                                    wp_reset_postdata();
+                                ?> 
+                            </div>
+                        
+
+                        </div>
+                        
+                    </div> 
+                            
+                    
+            <!-- </div> -->
         </div>
-    </div>
 </section>
 
 <section class="programm-course">
     <div class="wrapper programm-course__wrapper">
+        <h2 class="section-title programm-section__title">
+                <?php 
+                global $post;
+                $look_inside_info_post = get_post(501);
+                setup_postdata( $look_inside_info_post);
+                echo get_the_title($look_inside_info_post->ID);
+                wp_reset_postdata();
+                ?>
 
+        </h2>
         <div class="programm-course__description">
             <div class="programm-course__description-part">
-                <h2 class="section-title programm-section__title programm-section__title--bio">
-             <?php 
-               global $post;
-               $bio_info_post = get_post(238);
-               setup_postdata( $bio_info_post);
-               echo get_the_title($bio_info_post->ID);
-               wp_reset_postdata();
-             ?>
-
-                </h2>
+            
         
                 <div class="programm-course__description-text">
-                <?php
-                  
-                    $bio_info_post = get_post(238);
-                    setup_postdata( $bio_info_post);
+                <?php                 
+                   $workout_info_post = get_post(501);
+                   setup_postdata( $workout_info_post);
                     the_content();
                     wp_reset_postdata();
                 ?>
@@ -127,9 +124,9 @@ Template Name: yoga
                     <button type="button" class="programm-course__next">
                      <?php
                         global $post;
-                        $bio_info_post = get_post(238);
-                        setup_postdata( $bio_info_post);
-                        echo get_post_meta(238,'paragraph', true);
+                        $workout_info_post = get_post(501);
+                        setup_postdata( $workout_info_post);
+                        echo get_post_meta(501,'paragraph', true);
                         wp_reset_postdata();
                     ?>
                    </button>
@@ -141,7 +138,7 @@ Template Name: yoga
                     <br>
                      предложение с общей скидкой -30%
                 </p>
-                <button type="button" class="programm-course__request-btn">бронирую со скидкой</button>
+                <button type="button" class="programm-course__purchase-btn" data-course_part="Взгляд в себя со скидкой">бронирую со скидкой</button>
             </div>
             
         </div>
@@ -167,7 +164,7 @@ Template Name: yoga
                         'exclude'     => array(),
                         'meta_key'    => '',
                         'meta_value'  =>'',
-                        'post_type'   => 'bio-prog-vvodnoe',
+                        'post_type'   => 'lookinside-prog-init',
                         'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                     ) );
 
@@ -186,30 +183,12 @@ Template Name: yoga
                         <?php the_content();?> 
                         </div>
                     </div>
-                <?php
-                    }
+                        <?php
+                            }
 
-                    wp_reset_postdata(); // сброс
-                                    
-                ?>
-                
-                    <!-- <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--2">
-                            связь способностей с вниманием
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Нарабатываем навык управления вниманием. Учимся сканировать свое тело и пространство через углубление внимания, важность внимания и состояния “обнуления”
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--3">
-                            прием 
-                            <br>и отдача энергии
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Генерация и распознавание свойств энергии, методы передачи энергии
-                        </p>
-                    </div> -->
+                            wp_reset_postdata(); // сброс
+                                            
+                        ?>
                 </div>
             </div>
             <div class="programm-course__purchase"> 
@@ -217,7 +196,7 @@ Template Name: yoga
                     <span class="programm-course__purchase-text programm-course__purchase-text--blue">стоимость: </span>
                     <span class="programm-course__purchase-text">в группе — 3000 ₽. индивидуально — 10000 ₽</span>
                 </div>
-                <button type="button" class="programm-course__purchase-btn">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn" data-course_part="Взгляд в себя вводное занятие">хочу участвовать!</button>
             </div>
            
         </div>
@@ -235,7 +214,7 @@ Template Name: yoga
 
             <div class="programm-course__intro-content programm-course__intro-content--main">
               
-                <div class="programm-course__list">
+                <div class="programm-course__list programm-course__list--main">
                     <div class="programm-course__list-images">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/chakri-img.svg" alt="">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/zarad_vodi-img.svg" alt="">
@@ -253,7 +232,7 @@ Template Name: yoga
                         'exclude'     => array(),
                         'meta_key'    => '',
                         'meta_value'  =>'',
-                        'post_type'   => 'bio-prog-main',
+                        'post_type'   => 'look_inside-prog-main',
                         'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                     ) );
 
@@ -282,103 +261,7 @@ Template Name: yoga
                                     
                     ?>
 
-<!-- 
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--2">
-                            Видение ауры
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Отработка навыка видения ауры. 
-                            <br>
-                            <br>
-                            Интерпретация увиденного. Трансформация формы энергии и наблюдение изменений
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--3">
-                            здоровье
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Общие принципы и связи здоровья с энергетикой человека. 
-                            Практика на очищениеи восстановление функций<br>
-                            Методы целительства и техника безопасности
 
-                        </p>
-                    </div>
-
-                 
-                    <div class="programm-course__intro-item">                       
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--4">
-                            Заряд воды 
-                            <br>и носителей
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Общие принципы заряда воды, еды. Возможность наделенияих свойствами влияния, и качествами.
-                        </p>
-                    </div>
-                 
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--5">
-                            создание<br> амулетов
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Разная структура предметов — разные свойства. 
-                            <br>
-                            Усиление свойств природных камней.
-                            Заряд предметов энергией в качестве аккумулятора.
-                            <br>
-                            Заряд свойством и энергией
-                            <br>
-                            Базовая логика и механизм влияния амулета
-
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--6">
-                            энергетические<br>потоки
-                        </p>
-                        <p class="programm-course__intro-item-text">                           
-                            Виды потоков: потоки мест силы, потоки сил природы, универсальные космические потоки, эгрегориальные потоки.
-                            <br>
-                            Открытие и закрытие потоков, работа в потоках. Способы применения потоков
-
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--7">
-                            элементы 
-                            <br>стихий
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Практика 4-х стихий для очищения. Практическое применение энергии стихий. 
-                            <br>
-                            Баланс стихий и техника безопасности
-                        </p>
-                    </div>
-                   
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--8">
-                            экология
-                            <br>пространства
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Принципы циркуляции энергии в пространстве, методы работы с пространством.
-
-
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--9">
-                            разбор
-                            <br>ошибок
-                        </p>
-                        <p class="programm-course__intro-item-text">                           
-                            Разбор 5-и реальных ситуаций.
-                            <br>
-                            Виды ошибок по направлениям: базовая энергетическая практика, работа на местах силы, работа с внешними воздействиями
-                        </p>
-                    </div> -->
                 </div>
 
 
@@ -389,19 +272,19 @@ Template Name: yoga
                     <span class="programm-course__purchase-text programm-course__purchase-text--blue">стоимость: </span>
                     <span class="programm-course__purchase-text">в группе — 14000 ₽. индивидуально — 58000 ₽</span>
                 </div>
-                <button type="button" class="programm-course__purchase-btn">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn"data-course_part="Взгляд в себя основные темы">хочу участвовать!</button>
             </div>
         </div>
     </div>
     <div class="programm-course__border-deco"></div>
 
     <!--
-        сенсорика и интуиция
+        продвинутый
     -->
     <div class="wrapper programm-course__container programm-course__container--sensoric">
         <div class="programm-course__intro">
             <h2 class="section-title programm-section__title">
-                сенсорика и интуиция
+                продвинутый уровень
             </h2>
 
             <div class="programm-course__intro-content">
@@ -420,7 +303,7 @@ Template Name: yoga
                         'exclude'     => array(),
                         'meta_key'    => '',
                         'meta_value'  =>'',
-                        'post_type'   => 'bio-prog-sensoric',
+                        'post_type'   => 'look_inside-prog-adv',
                         'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                     ) );
 
@@ -449,36 +332,7 @@ Template Name: yoga
                                     
                     ?>
 
-                    <!-- <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--1">
-                            работа на расстоянии
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Чувствование людей на расстоянии по фото и по настройке.
-                            <br>
-                            Определение состояния человека. Определение уровня энергии
-                            и состояния чакр. Отработка навыка посылания энергии...
-                        </p>
-                    </div> -->
-                    <!-- <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--2">
-                            интуиция и сенсорика
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Общие принципы. Что нам мешает слышать интуицию?
-                            Техники просмотра будущего и ответов: Внутренний экран, Техника расстановки
-                            Сканы по фото, и по настройке — практика и отработка
-                        </p>
-                    </div>
-                    <div class="programm-course__intro-item">
-                        <p class="programm-course__intro-item-title programm-course__intro-item-title--3">
-                            прием 
-                            <br>и отдача энергии
-                        </p>
-                        <p class="programm-course__intro-item-text">
-                            Генерация и распознавание свойств энергии, методы передачи энергии
-                        </p>
-                    </div> -->
+                  
                 </div>
             </div>
             <div class="programm-course__purchase"> 
@@ -487,7 +341,7 @@ Template Name: yoga
                     <span class="programm-course__purchase-text">в группе — 3000 ₽. индивидуально — 10000 ₽</span>
         
                 </div>
-                <button type="button" class="programm-course__purchase-btn">хочу участвовать!</button>
+                <button type="button" class="programm-course__purchase-btn"data-course_part="Взгляд в себя продвинутый уровень">хочу участвовать!</button>
             </div>
             <div class="programm-course__addition"> 
                 <span class="programm-course__addition-homework programm-course__addition-homework--black">
@@ -513,7 +367,10 @@ Template Name: yoga
     <button type="button" class="programm-course__form--close">&#10006;</button>
 
     <form autocomplete="off" action="sender.php" class="programm-course__form"  method="post">
-        <label for="">
+        <?php 
+            echo do_shortcode('[contact-form-7 id="450" title="Форма YOGA-WORKOUT ХОЧУ УЧАСТВОВАТЬ"]');
+        ?>
+        <!-- <label for="">
             <input autocomplete="off" class="programm-course__input _req" type="text" name="name" id=""   placeholder="Имя:">
         </label>
         <label for="">
@@ -523,7 +380,7 @@ Template Name: yoga
             <input autocomplete="off" class="programm-course__input home-timetable__input--email _req _email" type="email" name="email" id="" placeholder="email">
         </label>
         <button type="submit" class="programm-course__form-submit">
-            записаться</button>
+            записаться</button> -->
     </form>
    
 </div>
@@ -544,8 +401,8 @@ Template Name: yoga
             <div class="programm-photo__photo-gallery">
             <?php
                 global $post;
-                $bio_gallery_post = get_post(245);
-                setup_postdata($bio_gallery_post);
+                $workout_gallery_post = get_post(451);
+                setup_postdata($workout_gallery_post);
                 the_content();
                 wp_reset_postdata();
             ?> 
@@ -576,7 +433,7 @@ Template Name: yoga
                 'exclude'     => array(),
                 'meta_key'    => '',
                 'meta_value'  =>'',
-                'post_type'   => 'bioenergy-review',
+                'post_type'   => 'workout-reviews',
                 'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
              ) );
 
@@ -593,7 +450,7 @@ Template Name: yoga
                 <div class="programm-reviews__item-content">
 
                     <?php                        
-                    $photo = get_post_meta(get_the_ID(),'bioenergy-rev-img', true);
+                    $photo = get_post_meta(get_the_ID(),'rev-img', true);
                     $fullImg = pods_image_url($photo, 'large');
                     echo '<img class ="programm-reviews__reviewer-photo"  src="'.$fullImg .'" alt = "Фото">'
                     ?>   
@@ -601,7 +458,7 @@ Template Name: yoga
                         <?php the_title();?>
                         </p>
                         <p class="programm-reviews__course-name _js-reviews__course-name">
-                        <?php echo get_post_meta(get_the_ID(),'bioenergy-rev-progr', true);?>
+                        <?php echo get_post_meta(get_the_ID(),'rev-progr', true);?>
                         </p>
                         <div class="programm-reviews__reviewer-contacts _js-reviews__reviewer-socials">
                             <a class="programm-reviews__reviewer-socials programm-reviews__reviewer-socials--IG" href="<?php echo get_post_meta(get_the_ID(),'ig-link', true);?>"></a>
@@ -626,7 +483,7 @@ Template Name: yoga
 
         </ul>
         <div class="programm-reviews__slider-btns">
-            <a  class="programm-reviews__more-btn">другие отзывы</a>
+            <a href="" class="programm-reviews__more-btn">другие отзывы</a>
         </div>
 
     </div>
@@ -651,7 +508,7 @@ Template Name: yoga
             <div class="course-enrollment__form-part">
                 <form action="" method="post" class="course-enrollment__form">
                 <?php 
-                     echo do_shortcode('[contact-form-7 id="328" title="Запись на курс Биоэнергетика"]')
+                     echo do_shortcode('[contact-form-7 id="492" title="Запись на курс Yoga Workout"]')
                 ?>
                     <!-- <input class="course-enrollment__input" type="text" name="name"  placeholder="Имя:">
                     <input class="course-enrollment__input course-enrollment__input--contacts" type="text" name="contacts" required placeholder="whatsapp / telegram">
