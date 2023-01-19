@@ -363,29 +363,29 @@ Template Name: look-inside
 
     <div class="programm-course__popup programm-course__popup--hidden">
 
-<div class="programm-course__form-part">
-    <button type="button" class="programm-course__form--close">&#10006;</button>
+        <div class="programm-course__form-part">
+            <button type="button" class="programm-course__form--close">&#10006;</button>
 
-    <form autocomplete="off" action="sender.php" class="programm-course__form"  method="post">
-        <?php 
-            echo do_shortcode('[contact-form-7 id="450" title="Форма YOGA-WORKOUT ХОЧУ УЧАСТВОВАТЬ"]');
-        ?>
-        <!-- <label for="">
-            <input autocomplete="off" class="programm-course__input _req" type="text" name="name" id=""   placeholder="Имя:">
-        </label>
-        <label for="">
-            <input autocomplete="off" class="programm-course__input home-timetable__input--contacts _req _tel" type="text"  name="contacts" id=""  placeholder="whatsapp / telegram">
-        </label>
-        <label for="">
-            <input autocomplete="off" class="programm-course__input home-timetable__input--email _req _email" type="email" name="email" id="" placeholder="email">
-        </label>
-        <button type="submit" class="programm-course__form-submit">
-            записаться</button> -->
-    </form>
-   
-</div>
+            <form autocomplete="off" action="sender.php" class="programm-course__form"  method="post">
+                <?php 
+                    echo do_shortcode('[contact-form-7 id="521" title="Форма Взгляд в себя ХОЧУ УЧАСТВОВАТЬ"]');
+                ?>
+                <!-- <label for="">
+                    <input autocomplete="off" class="programm-course__input _req" type="text" name="name" id=""   placeholder="Имя:">
+                </label>
+                <label for="">
+                    <input autocomplete="off" class="programm-course__input home-timetable__input--contacts _req _tel" type="text"  name="contacts" id=""  placeholder="whatsapp / telegram">
+                </label>
+                <label for="">
+                    <input autocomplete="off" class="programm-course__input home-timetable__input--email _req _email" type="email" name="email" id="" placeholder="email">
+                </label>
+                <button type="submit" class="programm-course__form-submit">
+                    записаться</button> -->
+            </form>
+        
+        </div>
 
-</div>
+    </div>
 </section>
        
 <section class="programm-photo">
@@ -401,8 +401,8 @@ Template Name: look-inside
             <div class="programm-photo__photo-gallery">
             <?php
                 global $post;
-                $workout_gallery_post = get_post(451);
-                setup_postdata($workout_gallery_post);
+                $look_inside_gallery_post = get_post(516);
+                setup_postdata($look_inside_gallery_post);
                 the_content();
                 wp_reset_postdata();
             ?> 
@@ -433,7 +433,7 @@ Template Name: look-inside
                 'exclude'     => array(),
                 'meta_key'    => '',
                 'meta_value'  =>'',
-                'post_type'   => 'workout-reviews',
+                'post_type'   => 'look-inside-reviews',
                 'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
              ) );
 
@@ -508,7 +508,7 @@ Template Name: look-inside
             <div class="course-enrollment__form-part">
                 <form action="" method="post" class="course-enrollment__form">
                 <?php 
-                     echo do_shortcode('[contact-form-7 id="492" title="Запись на курс Yoga Workout"]')
+                     echo do_shortcode('[contact-form-7 id="518" title="Запись на курс Взгляд в себя"]')
                 ?>
                     <!-- <input class="course-enrollment__input" type="text" name="name"  placeholder="Имя:">
                     <input class="course-enrollment__input course-enrollment__input--contacts" type="text" name="contacts" required placeholder="whatsapp / telegram">

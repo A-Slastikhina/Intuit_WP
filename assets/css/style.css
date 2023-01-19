@@ -550,6 +550,7 @@ a {
     border-radius: 25px;
     position: relative;
     top: -38px;
+    min-height: 25px;
   }
 }
 .header {
@@ -942,7 +943,7 @@ a {
     text-transform: uppercase;
     font-size: 60px;
     font-weight: 200;
-    text-shadow: #ffffff 1px 0 2px;
+    text-shadow: #ffffff 1px 0 12px;
   }
   .intro__courses-name--ff {
     font-family: "Montserrat Alternates", sans-serif;
@@ -2602,7 +2603,7 @@ a {
     text-transform: uppercase;
     font-size: 60px;
     font-weight: 200;
-    text-shadow: #ffffff 1px 0 2px;
+    text-shadow: #ffffff 1px 0 12px;
   }
   .intro__courses-name--ff {
     font-family: "Montserrat Alternates", sans-serif;
@@ -2834,6 +2835,7 @@ a {
   }
   .programm-content__paragraph {
     max-width: none;
+    column-count: 1;
   }
   .programm-content__paragraph:first-of-type {
     margin-top: 10px;
