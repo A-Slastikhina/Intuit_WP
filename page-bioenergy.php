@@ -532,7 +532,7 @@ Template Name: bioenergy
             <div class="course-enrollment__form-part">
                 <form action="" method="post" class="course-enrollment__form">
                 <?php 
-                     echo do_shortcode('[contact-form-7 id="328" title="Запись на курс Биоэнергетика"]')
+                     echo do_shortcode('[contact-form-7 id="491" title="Запись на курс Биоэнергетика"]')
                 ?>
                     <!-- <input class="course-enrollment__input" type="text" name="name"  placeholder="Имя:">
                     <input class="course-enrollment__input course-enrollment__input--contacts" type="text" name="contacts" required placeholder="whatsapp / telegram">
