@@ -23,7 +23,7 @@ Template Name: look-inside
                 <h2 class="programm-section__courses-name">
                 <?php echo get_post_meta(get_the_ID(),'subtitle', true);?>
                 </h2>
-                <h2 class="programm-section__courses-name programm-section__courses-name--big">
+                <h2 class="programm-section__courses-name programm-section__courses-name--big programm-section__courses-name--ff">
                     <?php the_title();?>
                 </h2>
                 <div class="programm-section__courses-info programm-section__courses-info--big">
@@ -281,14 +281,14 @@ Template Name: look-inside
     <!--
         продвинутый
     -->
-    <div class="wrapper programm-course__container programm-course__container--sensoric">
+    <div class="wrapper programm-course__container programm-course__container--adv">
         <div class="programm-course__intro">
             <h2 class="section-title programm-section__title">
                 продвинутый уровень
             </h2>
 
             <div class="programm-course__intro-content">
-                <div class="programm-course__list programm-course__list--sensoric">
+                <div class="programm-course__list programm-course__list--adv">
                 <div class="programm-course__list-images">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/bioenergy/bioenergy_programm/vvodnoe-img.svg" alt="">          
                 </div>

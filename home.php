@@ -39,10 +39,11 @@ get_header();
 
                         <li class="intro-courses__mobile-item">
 
-                        <p class=" intro-courses__mobile-title">
-                        <?php echo get_post_meta(get_the_ID(),'slide-subtitle', true);?>
-                        </p>
-                        <p class=" intro-courses__mobile-title"><?php the_title(); ?></p>
+                        <a href="<?php echo get_post_meta(get_the_ID(),'link', true);?>" class="intro-courses__mobile-title">
+                            <?php echo get_post_meta(get_the_ID(),'slide-subtitle', true);?>
+                        </a>
+                        <a href="<?php echo get_post_meta(get_the_ID(),'link', true);?>" class="intro-courses__mobile-title"><?php the_title(); ?>
+                        </a>
 
                         <div class="intro-courses__mobile-backround">
                         <?php                        
