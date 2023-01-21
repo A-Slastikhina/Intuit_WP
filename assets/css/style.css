@@ -795,10 +795,10 @@ a {
   background-size: cover;
   background-position: center;
   position: absolute;
-  height: 100px;
+  height: 70px;
   width: 100%;
   left: 0;
-  bottom: -37px;
+  bottom: -27px;
   overflow: hidden;
   z-index: 1;
 }
@@ -831,6 +831,7 @@ a {
   min-height: 360px;
   width: 100vw;
   overflow: hidden;
+
 }
 
 .intro-courses__mobile-backround {
@@ -850,7 +851,7 @@ a {
 }
 
 .intro-courses__mobile-title {
-  z-index: 1;
+  z-index: 2;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   color: #EDEBF6;
@@ -860,6 +861,7 @@ a {
   position: relative;
   bottom: -285px;
   margin: 0 auto;
+  display: block;
 }
 
 @media (min-width: 1020px) {
@@ -1746,7 +1748,7 @@ a {
 }
 
 .footer__wrapper {
-  width: 300px;
+  /* width: 300px; */
   margin: 0 auto;
   padding-left: 0;
   padding-right: 0;
@@ -1810,105 +1812,48 @@ a {
   }
   .footer__socials-link {
     width: 30px;
-    height: 30px;
-    background-position: center;
-    background-size: cover;
+    height: 30px;  
     display: block;
+    opacity: 1;
+    z-index: 1;
   }
   .footer__socials-hover {
     width: 30px;
     height: 30px;
-    background-position: center;
-    background-size: cover;
+    /* background-position: center;
+    background-size: cover; */
     display: block;
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+ 
+  }
+.footer__socials-link:hover{
+  opacity: 0;
+  z-index: 0;
+}
+.footer__socials-hover:hover {
+  opacity: 1;
+  z-index: 1;
+}
+  .footer__socials-img--hover{
+    width: 30px;
+    height: 30px;
     border: 1px solid white;
     border-radius: 50%;
+    /* position: relative;
+    left: -30px;
+    opacity: 0; */
   }
-  .footer__socials-link--ig {
-    background-image: url("../img/footer/desktop/Insta.svg");
-    position: relative;
+  .footer__socials-img{
+    width: 30px;
+    height: 30px;
   }
-  .footer__socials-hover--ig {
-    background-image: url("../img/footer/desktop/Inst-hover.svg");
-    position: absolute;
-    opacity: 0;
-    border: none;
-  }
-  .footer__socials-hover--ig:hover {
-    opacity: 1;
-  }
-  .footer__socials-hover--ig:hover .footer__socials-link--ig {
-    opacity: 0;
-  }
-  .footer__socials-link--tg {
-    background-image: url("../img/footer/desktop/Tg.svg");
-    position: relative;
-  }
-  .footer__socials-hover--tg {
-    background-image: url("../img/footer/desktop/telegram-hover.png");
-    position: absolute;
-    opacity: 0;
-  }
-  .footer__socials-hover--tg:hover {
-    opacity: 1;
-  }
-  .footer__socials-hover--tg:hover .footer__socials-link--tg {
-    opacity: 0;
-  }
-  .footer__socials-link--youtube {
-    background-image: url("../img/footer/desktop/youtube.svg");
-    position: relative;
-  }
-  .footer__socials-hover--youtube {
-    background-image: url("../img/footer/desktop/youtube-hover.png");
-    position: absolute;
-    opacity: 0;
-  }
-  .footer__socials-hover--youtube:hover {
-    opacity: 1;
-  }
-  .footer__socials-hover--youtube:hover .footer__socials-link--youtube {
-    opacity: 0;
-  }
-  .footer__socials-link--fb {
-    background-image: url("../img/footer/desktop/Fb.svg");
-    position: relative;
-  }
-  .footer__socials-hover--fb {
-    background-image: url("../img/footer/desktop/facebook-hover.png");
-    position: absolute;
-    opacity: 0;
-  }
-  .footer__socials-hover--fb:hover {
-    opacity: 1;
-  }
-  .footer__socials-hover--fb:hover .footer__socials-link--fb {
-    opacity: 0;
-  }
-  .footer__socials-link--vk {
-    position: relative;
-    background-image: url("../img/footer/desktop/vk.png");
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-  }
-  .footer__socials-hover--vk {
-    position: absolute;
-    background-image: url("../img/footer/desktop/vk-hover.png");
-    opacity: 0;
-    width: 32px;
-    height: 32px;
-  }
-  .footer__socials-hover--vk:hover {
-    opacity: 1;
-  }
-  .footer__socials-hover--vk:hover .footer__socials-link--vk {
-    opacity: 0;
-  }
+ 
   .footer__link--organizer {
     padding-left: 7px;
     border-left: 1px solid black;
-  }
+  } 
 }
 .header__popup {
   background-color: white;
@@ -2353,6 +2298,7 @@ a {
   }
   .bright__paragraph {
     max-width: none;
+    column-count: 1;
   }
   .bright__paragraph--third-col {
     margin-left: 0px;
@@ -2526,7 +2472,7 @@ a {
 }
 .about__intro::after {
   content: url("../img//home/Decor.png");
-  width: 250px;
+  width: 200px;
   position: relative;
   bottom: -216px;
   overflow-x: hidden;
@@ -3136,9 +3082,10 @@ a {
     margin-left: 0;
     margin-bottom: 0px;
     margin-top: 0;
+    width: 100%;
   }
   .programm-course__list--intro {
-    margin-top: 50px;
+   
   }
   .programm-course__list--intro::before {
     content: "";
@@ -3159,24 +3106,34 @@ a {
     content: "";
     display: none;
   }
-  .programm-course__list--sensoric {
+  .programm-course__list--adv {
     margin-top: 50px;
   }
-  .programm-course__list--sensoric::before {
+  .programm-course__list--adv::before {
     content: "";
     display: none;
   }
   .programm-course__intro-content {
     border: none;
-    padding-top: 154px;
+   
     margin-bottom: 0;
-    background-position: top;
-    background-size: 200px 200px;
-    background-repeat: no-repeat;
-    margin-top: 30px;
+   
    
   }
-  .programm-course__intro-content--initiatory {
+  .programm-course__list-images{
+    left: 0;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+  .programm-course__list-images img:first-of-type{
+   
+  }
+  .programm-course__list-images img:not(:first-of-type){
+    display: none;
+  }
+
+  /* .programm-course__intro-content--initiatory {
     background-image: url("../img/bioenergy/bioenergy_programm/vvodnoe-img.svg");
   }
   .programm-course__intro-content--main {
@@ -3184,9 +3141,10 @@ a {
   }
   .programm-course__intro-content--sensoric {
     background-image: url("../img/bioenergy/bioenergy_programm/chakri-img.svg");
-  }
+  } */
   .programm-course__intro-item {
     max-width: none;
+    margin-bottom: 0;
   }
   .programm-course__intro-item br {
     display: none;
@@ -3231,7 +3189,7 @@ a {
   }
   .programm-course__purchase {
     flex-direction: column;
-    margin-top: 35px;
+    /* margin-top: 35px; */
   }
   .programm-course__purchase-btn {
     margin-top: 10px;
